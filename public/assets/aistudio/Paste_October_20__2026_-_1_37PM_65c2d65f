@@ -1,0 +1,777 @@
+# MAJOR CAMPUS REDESIGN AND GAMEPLAY FIXES — TERRASKILLS 3D CAMPUS
+
+## PROJECT OBJECTIVE
+
+I want you to undertake a major redesign of the existing TerraSkills 3D campus environment and fix the underlying gameplay, navigation, collision, transportation, and building-interaction systems.
+
+The current environment looks scattered, poorly organized, and insufficiently realistic. Buildings, roads, vehicles, NPCs, and environmental features do not interact correctly. Several issues have been present since the earliest prompts, particularly the unrealistic transportation system and the failure of NPCs and vehicles to respect the environment.
+
+**This is not merely a visual redesign. It is a structural and functional improvement to the existing game.**
+
+Before making changes, inspect the existing project, understand its architecture, identify the systems responsible for the problems described below, and implement the fixes within the current codebase.
+
+Do not rebuild the entire project from scratch, discard existing features, or replace functional systems unnecessarily. Preserve the existing gameplay, player progression, characters, interactions, and other working features while improving the campus and the systems that control it.
+
+Do not simply add visual objects or simulate functionality with animations that are disconnected from the actual game logic. Every feature must work within the existing game.
+
+---
+
+# 1. COMPLETE CAMPUS LAYOUT AND ARCHITECTURAL REDESIGN
+
+Redesign the entire campus to make it look like a professionally planned, visually appealing, believable university environment.
+
+The current campus layout is too scattered and disorganized. Buildings sometimes appear in the middle of roads, roads intersect buildings, and the overall arrangement lacks a coherent architectural plan.
+
+These problems must be corrected.
+
+### 1.1 Establish a coherent campus master plan
+
+Reorganize the campus using a logical layout with clearly defined areas, including:
+
+- Academic buildings and lecture halls.
+- Administrative buildings and offices.
+- Student activity and gathering areas.
+- Pedestrian walkways and landscaped spaces.
+- Vehicle roads, junctions, intersections, and turning areas.
+- Parking areas and designated pickup and drop-off points.
+- Recreational spaces, benches, gardens, and other campus amenities.
+- The central campus landmark and the school mascot statues.
+
+The arrangement should feel intentional, as though an architect and campus planner designed the entire university together.
+
+Buildings must occupy appropriate plots of land, with adequate clearance around their entrances and surrounding roads.
+
+### 1.2 Correct all building and road intersections
+
+No building should be placed on top of a road or intersect the road geometry.
+
+No road should pass through the interior of a building, through its walls, or through its footprint.
+
+Roads should connect to one another logically, with appropriate intersections and turning areas. Where a building requires access from a road, create a proper driveway, access lane, or pedestrian approach.
+
+Ensure that building entrances face accessible pedestrian paths and that vehicles can reach appropriate nearby drop-off points without driving into buildings or across landscaping.
+
+Before completing the redesign, inspect the entire campus for overlapping geometry, inaccessible buildings, disconnected roads, and other layout errors.
+
+### 1.3 Improve the campus aesthetic
+
+The campus should feel polished, immersive, and professionally designed.
+
+Improve the use of:
+
+- Trees, shrubs, flowers, and landscaped green spaces.
+- Attractive benches and shaded seating areas.
+- Streetlights, pathway lighting, and other appropriate fixtures.
+- Sidewalks, paved walkways, and clearly defined road edges.
+- Outdoor gathering spaces and visually interesting landmarks.
+- Consistent building placement, scale, materials, and architectural style.
+
+Avoid randomly scattering objects around the campus. Every object should have a deliberate position and purpose.
+
+The environment should feel like a cohesive university campus rather than a collection of unrelated buildings and objects.
+
+---
+
+# 2. BUILD A PROPER NETWORK OF ROADS CONNECTING THE CAMPUS
+
+A functional road network is essential because the player must be able to travel between buildings using taxis, kekes, and campus shuttle buses.
+
+The existing road arrangement must be reviewed and redesigned wherever necessary.
+
+### 2.1 Create a connected road network
+
+Construct a well-planned network consisting of:
+
+- Major campus roads.
+- Secondary roads branching off the main roads.
+- Smaller access roads leading toward individual buildings and campus facilities.
+- Proper junctions and intersections.
+- Left-turn and right-turn routes.
+- Pickup and drop-off points.
+- Appropriate road connections to parking areas and other destinations.
+
+Every important destination should be reachable through a valid road route, even when the vehicle cannot reach the building's actual entrance.
+
+Do not position buildings randomly and then attempt to force roads through them. Plan the roads and buildings together.
+
+### 2.2 Roads must be actual navigable surfaces
+
+Do not treat roads as merely painted lines on the same undifferentiated ground surface as the grass.
+
+Implement a proper road representation in the game, using the project's existing rendering and navigation technology. This may involve road meshes, road segments, road boundaries, road metadata, or a dedicated road graph, depending on the architecture.
+
+The game must be able to distinguish between:
+
+- Driveable road surfaces.
+- Pedestrian paths.
+- Grass and landscaping.
+- Water and ponds.
+- Buildings and other obstacles.
+- Bridges and their walkable or driveable surfaces.
+
+Vehicles must have a reliable way to determine where they are allowed to travel.
+
+A road network that only looks correct but does not constrain vehicle movement is not sufficient.
+
+### 2.3 Vehicle route planning
+
+Implement or improve the road-navigation system so that vehicles follow connected road routes from their starting point to their destination.
+
+Vehicles must:
+
+- Stay on valid road surfaces.
+- Follow the road network through intersections.
+- Turn left or right at the appropriate junctions.
+- Follow road curvature instead of cutting across corners.
+- Avoid driving across grass, gardens, sidewalks, ponds, or building interiors.
+- Avoid becoming stuck at junctions or narrow sections.
+- Stop or slow down when necessary.
+- Reach a valid destination or drop-off point close to the requested building.
+
+Use a proper route graph, waypoint system, navigation spline, or another suitable method consistent with the existing game engine.
+
+Calculate valid routes along connected road segments. Do not simply move a vehicle in a straight line toward its destination.
+
+Vehicle movement must be constrained by the route and the actual driveable geometry.
+
+If a destination is not directly accessible by road, select the nearest suitable accessible drop-off point and let the player walk the remaining distance.
+
+**Important:** Do not fix this by teleporting vehicles back onto roads after they drive off them. Prevent invalid movement through proper route-following logic, steering constraints, collision detection, and road-boundary enforcement.
+
+---
+
+# 3. FIX THE POND, WATER GEOMETRY, AND BRIDGE
+
+The pond is currently being treated like a flat blue mat placed on the ground. This is incorrect.
+
+I want a convincing pond with a recognizable shoreline, visible depth, appropriate terrain contours, and a properly constructed bridge.
+
+The pond must function as a physical obstacle, not merely a decorative blue surface.
+
+### 3.1 Create a proper pond
+
+Redesign the pond to have:
+
+- A clearly defined shoreline.
+- A recessed or contoured basin that looks natural.
+- Water positioned appropriately within the basin.
+- A visible distinction between the water and the surrounding land.
+- Appropriate water depth and surface effects.
+- Natural-looking transitions between the surrounding terrain and the water.
+- Suitable collision and navigation restrictions.
+
+Use actual terrain geometry, a recessed basin, a suitable water mesh, or another appropriate implementation for the existing engine.
+
+Do not merely color a flat section of ground blue.
+
+The water surface should sit at a believable height relative to the surrounding banks, and the surrounding terrain should visibly define the pond's shape.
+
+### 3.2 NPCs must not enter the pond
+
+NPCs walking around the campus must not be able to walk into the pond, sink into the water, or walk across its surface.
+
+Implement proper collision boundaries and navigation restrictions around the pond.
+
+The pond must be represented as a non-walkable area in the NPC navigation system. NPC pathfinding must recognize the shoreline as an obstacle and calculate routes around it or across the designated bridge.
+
+Do not rely solely on visual water effects or on the assumption that NPCs will avoid the pond naturally.
+
+Even when an NPC's target destination is on the other side, the NPC must not walk directly through the water. If the bridge is the intended crossing, the navigation system must route the NPC onto the bridge.
+
+If an NPC approaches the shoreline, its movement must be constrained so that it cannot cross the water boundary.
+
+### 3.3 Vehicles must not enter the pond
+
+Taxis, kekes, buses, and other vehicles must never drive into the pond or across its water surface.
+
+The vehicle navigation system must recognize the pond as a non-driveable area.
+
+Vehicles must follow valid roads and must not take shortcuts through the pond, even when doing so would provide a shorter route to their destination.
+
+The bridge must only be considered a vehicle route if it is explicitly designed and configured to support vehicles. If it is a pedestrian bridge, vehicles must use another valid road route.
+
+### 3.4 Fix the bridge geometry and crossing
+
+A bridge already exists over the pond, but its implementation must be corrected wherever necessary.
+
+The bridge must:
+
+- Be visibly elevated or appropriately positioned above the water.
+- Connect to solid land or proper approach paths on both ends.
+- Have a continuous, properly aligned walking surface.
+- Have appropriate width, railings, and supporting structure.
+- Have correct collision geometry.
+- Connect seamlessly to the surrounding pedestrian paths.
+- Be the designated route for NPCs crossing the pond.
+
+The bridge must not contain gaps, invisible obstacles, or sudden changes in elevation that cause characters to fall, float, or become stuck.
+
+### 3.5 Prevent falling and floating on the bridge
+
+NPCs and the player must remain on the bridge's actual walking surface.
+
+Configure the bridge's collision geometry and navigation representation so that characters cannot drift off its sides or walk over the railings into the water.
+
+Characters should follow the bridge's actual path and elevation rather than moving along a separate, inaccurate route.
+
+If the bridge is narrow, characters must adjust their movement to remain within its walkable boundaries.
+
+Where appropriate, use character collision, navigation constraints, and valid movement projections to keep characters on the bridge.
+
+Do not use invisible teleportation or arbitrary position corrections as a substitute for fixing the bridge and navigation geometry.
+
+### 3.6 Character-to-character interaction on the bridge
+
+NPCs and the player must not simply pass through one another as though they have no physical presence.
+
+Implement appropriate character collision and local avoidance.
+
+When two characters meet on the bridge, they should respond naturally by slowing down, pausing, adjusting their positions, or yielding to one another.
+
+They must remain on the bridge while negotiating the encounter.
+
+Because the bridge may be narrow, implement sensible passing and yielding behavior so that characters do not push one another into the pond or become permanently stuck.
+
+If there is insufficient room to pass safely, one character should wait while the other crosses or moves into an appropriate passing position.
+
+The goal is believable movement and physical interaction without compromising the safety of the characters or the integrity of the bridge.
+
+---
+
+# 4. REDESIGN THE TRANSPORTATION EXPERIENCE — NO INSTANT ARRIVAL
+
+This is one of the most important requirements in the entire project.
+
+The existing transportation system is not acceptable if boarding a taxi, keke, or shuttle causes the player to disappear and immediately reappear at the destination.
+
+I have repeatedly requested a visible journey, and this must now be implemented properly.
+
+**The player must experience the journey in real time. Transportation must not be reduced to an instant teleportation between locations.**
+
+### 4.1 Complete transportation sequence
+
+Implement the following gameplay sequence:
+
+**Step 1: Select a destination**
+
+The player interacts with the appropriate transportation service and selects a destination from the existing destination interface or an improved version of it.
+
+The player should be able to choose a building or another valid campus destination.
+
+**Step 2: Show the fare and confirm the journey**
+
+Before boarding, calculate or display the fare as appropriate for the existing game economy.
+
+The player must confirm the trip and pay before the journey begins.
+
+The selected destination, fare, and payment status must be retained throughout the trip.
+
+Do not charge the player again simply because the vehicle stops to pick up another passenger.
+
+**Step 3: Board the vehicle visibly**
+
+The player must visibly board the taxi, keke, or shuttle.
+
+Implement an appropriate boarding animation or interaction that places the player inside the vehicle or in a convincing passenger position.
+
+If the existing game uses a third-person camera, provide an appropriate view of the boarding sequence before transitioning to the journey camera.
+
+Do not simply change the player's coordinates to the destination.
+
+**Step 4: Begin the journey**
+
+The vehicle must begin moving along the actual road network.
+
+The player must be able to witness the journey as it unfolds.
+
+The vehicle must follow the road geometry, navigate intersections, turn at junctions, and respect the route to the destination.
+
+The journey must take a reasonable amount of simulated time based on distance, vehicle speed, and route length.
+
+The vehicle must not jump between waypoints, teleport around corners, pass through buildings, or cut across grass to reach the destination faster.
+
+**Step 5: Show the surrounding campus during travel**
+
+The camera must make the journey visible and engaging.
+
+Use an appropriate passenger-view, third-person follow camera, or another suitable camera arrangement that allows the player to observe the vehicle moving through the campus.
+
+The player should see the roads, buildings, landmarks, intersections, and other campus activity passing by.
+
+The camera must follow the actual vehicle rather than independently moving toward the destination.
+
+Ensure that the vehicle and camera movement remain synchronized.
+
+**Step 6: Handle stops and additional passengers**
+
+During the journey, the vehicle may occasionally stop at an appropriate pickup point to collect another passenger.
+
+When this happens:
+
+- The vehicle must slow down and stop at a valid location along the road.
+- The other passenger must visibly approach and board, where appropriate.
+- A short contextual exchange between the passenger and driver may occur.
+- The vehicle must resume its journey after the boarding sequence.
+- The vehicle must remain on its route throughout the process.
+
+Additional passenger pickups should be occasional and believable, not disruptive or excessively frequent.
+
+They must not cause the vehicle to wander off its route, block the road indefinitely, or abandon the player's destination.
+
+**Step 7: Arrive at the destination**
+
+When the vehicle reaches the destination, it must stop at a valid road-accessible drop-off point near the selected building.
+
+The player must visibly arrive at that location.
+
+The game should show an appropriate arrival or disembarking sequence before returning control to the player.
+
+The player can then walk the remaining short distance to the building.
+
+The trip should only be marked complete after the vehicle has actually reached the drop-off point and the arrival sequence has been completed.
+
+### 4.2 Vehicle movement must be continuous and believable
+
+The transportation experience must be driven by the actual vehicle's position and route progress.
+
+Do not fake the journey by moving the camera while the vehicle remains stationary.
+
+Do not animate the vehicle along a route while independently teleporting the player.
+
+Do not simulate movement with a loading screen, a progress bar, or a message saying that the player has arrived.
+
+The vehicle itself must travel through the world.
+
+The player's journey should be a continuous, observable sequence, with appropriate turning, acceleration, deceleration, stopping, and arrival behavior.
+
+Use sensible speeds and smooth movement. Avoid abrupt rotations, sideways sliding, excessive bouncing, and unrealistic turns.
+
+### 4.3 Prevent invalid boarding and arrival positions
+
+The player must not appear outside the vehicle while the vehicle is moving.
+
+The player must not spawn inside a building, in the middle of a road, above the pond, or at an arbitrary location when the trip ends.
+
+Boarding and disembarking positions must be defined and validated.
+
+The destination must resolve to a valid drop-off point on or immediately beside a suitable road.
+
+If no valid route exists, do not start a journey that will inevitably fail. Provide a suitable message or select an accessible alternative.
+
+### 4.4 Transportation must work for all vehicle types
+
+Apply this system to every applicable transportation option, including:
+
+- Taxis.
+- Kekes.
+- Campus shuttle buses.
+
+Each vehicle type may have its own speed, dimensions, passenger capacity, animations, and turning behavior, but all must obey the same fundamental road-navigation rules.
+
+A shuttle bus must not drive through buildings because its route is incorrect. A keke must not drive across the grass because its destination is nearby. A taxi must not travel across the pond because a direct line to the destination is shorter.
+
+All transportation options must use valid routes through the campus.
+
+---
+
+# 5. REDESIGN THE TAXIS, KEKES, AND SHUTTLE BUSES
+
+The current vehicles look like basic cubes with wheels. They need significantly better visual quality.
+
+Improve their models while preserving compatibility with the existing vehicle, passenger, and movement systems.
+
+### 5.1 Kekes
+
+Create a more recognizable and detailed keke model with:
+
+- A clearly defined front, rear, and passenger compartment.
+- A believable roof and body structure.
+- Visible seating and passenger space.
+- Properly positioned wheels.
+- A recognizable windshield and side openings.
+- Appropriate lights, mirrors, and other exterior details.
+- Materials and colors consistent with the campus setting.
+
+The model should look like a plausible motorized tricycle rather than a box with tires attached.
+
+### 5.2 Taxis
+
+Improve taxi models with a recognizable vehicle body, windows, doors, wheels, lights, mirrors, and other appropriate details.
+
+Provide a clear passenger compartment and sensible boarding and exit positions.
+
+### 5.3 Shuttle buses
+
+Create more detailed campus shuttle buses with:
+
+- A recognizable bus body and proportions.
+- Proper windows and passenger seating.
+- Wheels positioned correctly.
+- Front and rear lighting.
+- Doors and appropriate entry points.
+- A consistent campus transport identity.
+
+Where suitable, use campus branding or colors.
+
+### 5.4 Model quality and implementation
+
+Improve proportions, materials, geometry, and detailing without introducing unnecessarily heavy models that damage performance.
+
+Use the existing 3D engine and rendering capabilities. If the project currently relies on procedural geometry, improve the geometry and materials rather than replacing everything without justification.
+
+Ensure that the visual models match their collision shapes and navigation requirements.
+
+The vehicle must not visually fit on a road while its actual collision geometry extends far beyond the road boundaries.
+
+Most importantly, **better-looking vehicles must continue to follow the road network correctly.** Visual improvements must not break the existing transportation system.
+
+---
+
+# 6. CREATE A CENTRAL CAMPUS LANDMARK TOWER
+
+Introduce a striking landmark at the central area of the university campus.
+
+The tower should become one of the most recognizable features of the environment.
+
+### Requirements
+
+- Position it at the visual and spatial center of the campus, or at the most appropriate central plaza based on the redesigned layout.
+- Make it tall enough to be visible from several areas of the campus.
+- Give it a polished, modern, architecturally interesting design.
+- Incorporate the game's official logo or campus branding prominently.
+- Use appropriate lighting, materials, and architectural detailing.
+- Integrate the tower with the surrounding plaza, walkways, landscaping, and seating areas.
+- Ensure that it does not obstruct roads, pedestrian movement, building entrances, or vehicle routes.
+
+The landmark should look like a deliberate centerpiece, not a randomly placed decorative object.
+
+If the official game logo is already available in the project, reuse the actual asset rather than inventing a different logo.
+
+If the logo is not available, inspect the existing assets and branding before creating a suitable placeholder.
+
+The tower should improve the campus's identity and provide a recognizable point of reference for navigation.
+
+---
+
+# 7. ADD LARGE STATUES OF THE SCHOOL MASCOT
+
+The school's mascot is the Monopoly-style gentleman character, recognizable by his formal suit, top hat, and distinguished appearance.
+
+Add approximately two or three large mascot statues at strategically selected locations throughout the campus.
+
+### Placement
+
+Possible locations include:
+
+- The main campus entrance or arrival plaza.
+- A central student gathering area.
+- A major academic or administrative district.
+
+Select locations that make architectural and visual sense within the redesigned campus.
+
+Do not place the statues randomly or block major roads, pathways, or entrances.
+
+### Design
+
+Each statue should be large, detailed, polished, and visually impressive.
+
+Use a recognizable gentleman mascot silhouette, appropriate clothing details, a top hat, a suitable pose, and a professionally designed pedestal.
+
+Where appropriate, incorporate campus branding or a small commemorative plaque.
+
+The statues should feel like permanent campus landmarks that students and visitors can recognize.
+
+Maintain visual consistency between the statues while allowing different poses or pedestal designs if that improves the environment.
+
+If the existing game already contains an established mascot model or approved character asset, use that asset as the reference. Do not replace the mascot with an unrelated character.
+
+---
+
+# 8. ADD ATTRACTIVE BENCHES AND CAMPUS STREET FURNITURE
+
+Introduce properly designed benches and other appropriate outdoor furniture throughout the campus.
+
+The current campus needs more intentional public spaces where students and NPCs can gather, rest, and interact.
+
+### Bench requirements
+
+- Use recognizable bench designs rather than primitive blocks.
+- Give the seats, legs, supports, and backrests appropriate geometry and materials.
+- Position benches along walkways, near landscaped areas, in courtyards, and around designated gathering spaces.
+- Provide adequate space around benches so that pedestrians can move freely.
+- Avoid placing benches in the middle of roads or blocking building entrances.
+- Use consistent styles or complementary designs across the campus.
+
+Where the existing NPC system supports it, allow NPCs to approach benches, sit down, stand up, and continue their activities naturally.
+
+Do not add fake sitting animations unless the character's position and interaction actually work.
+
+The same principle applies to other campus furniture, including waste bins, streetlights, planters, and shaded seating structures.
+
+---
+
+# 9. BUILDING ENTRANCES AND THE 'PRESS E TO ENTER' SYSTEM
+
+All accessible buildings must have clearly identifiable entrances.
+
+The current interaction system must be corrected so that the player cannot enter a building merely by standing beside an arbitrary section of its wall.
+
+### 9.1 Give every accessible building a proper entrance
+
+Each accessible building must have a clearly visible entrance positioned appropriately on its exterior.
+
+The entrance can be wide, elegant, modern, or architecturally prominent. It does not have to be a narrow single-person door.
+
+Use suitable door geometry, a recognizable entrance frame, and an appropriate approach area.
+
+Where necessary, provide stairs, ramps, or other access features that connect the entrance to the surrounding pedestrian paths.
+
+Ensure that every entrance is reachable without walking through a wall, crossing a road illegally, or passing through landscaping.
+
+### 9.2 Interaction must be restricted to the actual entrance
+
+The player must only receive the building interaction prompt when they are sufficiently close to that building's designated entrance.
+
+For example:
+
+- Standing beside a building's side wall must not trigger the entrance prompt.
+- Standing behind the building must not trigger the entrance prompt.
+- Standing on a nearby road must not trigger the entrance prompt.
+- Standing in front of the building but too far from its entrance must not trigger the prompt.
+- Approaching the actual entrance should trigger the prompt when the player enters the appropriate interaction range.
+
+The prompt might read:
+
+**Press E to Enter**
+
+Use the existing interaction conventions if they differ.
+
+The important requirement is that the interaction is linked to the entrance, not simply to the building's overall bounding box or a large invisible radius surrounding the building.
+
+### 9.3 Validate the entrance before allowing entry
+
+When the player presses E, verify that the player is within the valid interaction range of the designated entrance.
+
+If the player is too far away or is approaching from an invalid position, the interaction must not activate.
+
+Use entrance-specific interaction zones or another reliable method tied to the actual door position.
+
+Where necessary, validate the player's distance and approach position to prevent triggering the interaction through walls.
+
+### 9.4 Preserve existing interior and gameplay functionality
+
+Do not break the existing building interiors, classes, offices, quests, or other building-related systems.
+
+When the player enters through the correct door, the existing building-entry flow should continue to function as intended.
+
+When the player exits, return them to a valid position outside the same entrance, not inside a wall, on the road, or at an unrelated location.
+
+Apply this consistently across all accessible buildings.
+
+---
+
+# 10. NPC MOVEMENT AND ENVIRONMENTAL COLLISION
+
+NPCs must behave as characters navigating a real environment rather than objects moving independently of the world.
+
+Improve the existing NPC movement system so that it respects the physical and navigational structure of the redesigned campus.
+
+### Required behavior
+
+- NPCs must not walk into ponds or other water bodies.
+- NPCs must not walk through building walls.
+- NPCs must not walk across restricted landscaping when a proper path is available.
+- NPCs must use pedestrian walkways and appropriate crossings.
+- NPCs must follow the bridge when crossing the pond.
+- NPCs must not fall off the sides of bridges.
+- NPCs must not float above the ground or sink below it.
+- NPCs must not pass directly through other characters.
+- NPCs must respond to obstacles and crowded areas.
+- NPCs must avoid becoming permanently stuck at doors, junctions, bridges, or narrow paths.
+
+Use the appropriate combination of collision detection, navigation meshes, pathfinding, local avoidance, and movement constraints.
+
+NPC navigation must be generated or updated to match the redesigned campus geometry.
+
+Do not assume that making an object look solid automatically makes it an obstacle for the NPC navigation system.
+
+Likewise, do not assume that changing the navigation mesh automatically fixes the collision system.
+
+The visual geometry, collision geometry, and navigation representation must agree.
+
+Where NPCs have scheduled activities or destinations, ensure that they use valid routes to reach those destinations.
+
+---
+
+# 11. ESTABLISH CLEAR MOVEMENT RULES FOR THE ENTIRE CAMPUS
+
+The player, NPCs, and vehicles should each have appropriate movement rules.
+
+### Player
+
+The player must not be able to walk through solid buildings, enter the pond, fall through the bridge, or pass through other solid obstacles.
+
+The player should be able to use the intended walkable paths and cross the pond using the bridge.
+
+### Pedestrian NPCs
+
+NPCs must use valid pedestrian routes and respect environmental boundaries, character collision, and restricted areas.
+
+### Vehicles
+
+Vehicles must use valid driveable roads and designated vehicle-accessible bridges or access lanes only.
+
+Vehicles must not drive through pedestrian-only paths, buildings, ponds, grass, or other restricted surfaces.
+
+### Shared environment
+
+All three movement systems must agree on the position and properties of obstacles.
+
+If the pond is non-walkable, it must not become walkable simply because an NPC is using a different movement system.
+
+If a building occupies a particular space, that space must not become a valid road route for vehicles.
+
+If a bridge is pedestrian-only, vehicles must not use it as a shortcut.
+
+**Do not solve individual symptoms with isolated patches while leaving the underlying systems inconsistent.**
+
+---
+
+# 12. IMPLEMENTATION APPROACH AND TECHNICAL REQUIREMENTS
+
+Before implementing the changes, inspect the existing source code and identify the actual systems controlling the following:
+
+- Campus layout and procedural object placement.
+- Terrain, ground, and water generation.
+- Road geometry and road connectivity.
+- Vehicle models and vehicle movement.
+- NPC pathfinding and movement.
+- Player movement and collision.
+- Bridge geometry and collision.
+- Transportation destination selection and fare payment.
+- Vehicle boarding and disembarking.
+- Camera control during transportation.
+- Building entrances and interaction prompts.
+- Building entry and exit.
+- Existing game assets, branding, and mascot models.
+
+Then implement the changes in the correct systems.
+
+### Technical principles
+
+1. **Use the actual project architecture.** Do not invent new files, APIs, libraries, or systems without first checking what already exists.
+
+2. **Separate appearance from functionality.** A blue pond is not a functional water obstacle, a painted road is not a vehicle navigation system, and a door model is not a working entrance interaction.
+
+3. **Use appropriate collision geometry.** Buildings, water boundaries, bridges, vehicles, and other physical objects must have suitable collision representations.
+
+4. **Maintain navigation consistency.** Road routes must correspond to driveable surfaces, while pedestrian routes must correspond to safe walkable surfaces.
+
+5. **Avoid hard-coded shortcuts.** Do not teleport the player to the destination, move vehicles directly toward their targets, or allow NPCs to ignore obstacles because a route is difficult to calculate.
+
+6. **Preserve existing features.** Avoid breaking the game's classes, quests, phone interactions, progression, dialogue, or other systems that are not part of this redesign.
+
+7. **Make changes maintainable.** Reuse shared movement, collision, and interaction logic where appropriate instead of introducing conflicting implementations for every individual building or vehicle.
+
+8. **Optimize performance.** The redesigned campus must remain responsive, with sensible geometry complexity, efficient pathfinding, and no unnecessary per-frame calculations.
+
+9. **Avoid cosmetic-only completion.** Do not report that a feature is fixed merely because it looks better. Verify that its underlying functionality works.
+
+10. **Do not silently remove existing functionality.** If a requested change conflicts with an existing system, resolve the conflict while preserving the intended gameplay wherever possible.
+
+---
+
+# 13. TESTING AND ACCEPTANCE CRITERIA
+
+After implementation, test the actual game behavior rather than relying solely on visual inspection.
+
+The redesign is not complete until the following scenarios have been checked.
+
+### Campus layout
+
+- Buildings no longer intersect roads.
+- Roads do not pass through buildings.
+- Major and secondary roads connect logically.
+- Buildings have accessible entrances and nearby pedestrian paths.
+- The campus has a coherent architectural layout.
+- The central tower and mascot statues are positioned appropriately.
+- Benches and other furniture do not obstruct movement.
+
+### Pond and bridge
+
+- The pond has recognizable terrain contours and a proper water surface.
+- NPCs cannot walk into the pond.
+- The player cannot walk into the pond.
+- Vehicles cannot drive into the pond.
+- Pedestrians can cross using the bridge.
+- Characters remain on the bridge's walkable surface.
+- Characters do not fall off the bridge or float above the water.
+- Two characters meeting on the bridge can negotiate passing without passing through each other or falling into the pond.
+
+### Road and vehicle navigation
+
+- Every important building has a valid road-accessible drop-off point or a suitable nearby alternative.
+- Taxis, kekes, and shuttle buses follow connected roads.
+- Vehicles make the necessary turns at junctions.
+- Vehicles do not drive across grass, gardens, ponds, or buildings.
+- Vehicles do not cut through corners or take shortcuts across restricted areas.
+- Vehicles can complete their routes without becoming stuck.
+- The redesigned vehicle models align correctly with their movement and collision geometry.
+
+### Transportation journey
+
+- The player selects a destination before travelling.
+- The fare is calculated or displayed appropriately.
+- Payment is handled before the journey starts.
+- The player visibly boards the selected vehicle.
+- The vehicle travels through the actual campus.
+- The camera shows the journey unfolding in real time.
+- The vehicle follows the road network and takes the necessary turns.
+- Optional passenger pickups happen at suitable locations.
+- The player does not teleport to the destination.
+- The vehicle stops at a valid drop-off point.
+- The player visibly disembarks and can continue on foot.
+- The trip completes correctly without duplicating payment or losing the selected destination.
+
+### Building interactions
+
+- Every accessible building has a clearly identifiable entrance.
+- The entry prompt does not appear merely because the player is beside a wall.
+- The entry prompt appears when the player approaches the actual door.
+- Entry is validated when E is pressed.
+- The existing interior and building-entry systems continue to work.
+- Exiting the building returns the player to an appropriate position.
+
+### Final verification
+
+Test multiple routes, different vehicle types, narrow pedestrian paths, the pond bridge, building entrances, and areas where NPCs and vehicles may encounter obstacles.
+
+Fix any issues discovered during testing.
+
+Do not claim that a test has passed unless it has actually been performed. If some behavior cannot be verified automatically, identify the required manual test and its result honestly.
+
+---
+
+# FINAL INSTRUCTION
+
+Treat this as a coordinated redesign of the entire TerraSkills 3D campus, with particular emphasis on **correct physical boundaries, a coherent road network, believable transportation journeys, and properly functioning building interactions.**
+
+Do not focus on the new tower, statues, benches, or vehicle appearance while leaving the fundamental problems unresolved.
+
+The order of importance is:
+
+1. Fix the world geometry, collisions, and navigation rules.
+2. Redesign the campus layout and construct a reliable road network.
+3. Fix the pond, bridge, NPC movement, and vehicle movement.
+4. Implement the complete, visible transportation journey.
+5. Fix building entrances and interaction validation.
+6. Improve vehicle models and add the tower, mascot statues, benches, landscaping, and other aesthetic features.
+7. Test the integrated result and correct any regressions.
+
+You may adjust the implementation order when technical dependencies require it, but all requirements must be addressed.
+
+Make the changes directly in the existing project. Do not stop after producing a plan or a list of proposed changes. Inspect the code, implement the necessary modifications, and test the result.
+
+If a feature cannot be completed because of a genuine technical limitation, explain the specific limitation and what remains to be implemented rather than substituting a cosmetic approximation.
+
+**The desired result is a cohesive, immersive, believable 3D university campus where the environment has consistent physical rules, NPCs behave naturally, vehicles obey the road network, transportation is an actual visible journey, and every building can be entered only through its designated entrance.**

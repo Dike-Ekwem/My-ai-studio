@@ -1,0 +1,738 @@
+# TERRASKILLS 3D — OPENING EXPERIENCE, STUDENT CUSTOMIZATION, HOSTEL OWNERSHIP, AND ACADEMIC PROGRESSION
+
+## PROJECT INSTRUCTION
+
+Implement the following improvements in the existing TerraSkills 3D game.
+
+These requirements expand the existing game and must work alongside the campus redesign, transportation system, NPC behavior, building interactions, and other features already specified.
+
+Before changing anything, inspect the existing codebase and identify how the game's opening screen, player creation, cutscenes, hostel system, departments, timetable, class attendance, phone notifications, and academic progression currently work.
+
+Preserve existing functional systems wherever possible. Integrate the new functionality into the actual game logic rather than adding disconnected screens or cosmetic features.
+
+**Important:** Do not fix one feature by breaking another. Do not remove existing gameplay, story elements, or progression systems simply because they are inconvenient to modify.
+
+---
+
+# 1. REDESIGN THE MAIN MENU
+
+The first screen displayed when the player launches the game must be visually redesigned.
+
+The current plain green background is too basic. Retain the existing green-and-gold color identity, but transform the screen into an attractive, polished introduction to the university.
+
+### Visual direction
+
+Use a cinematic, elevated, forward-facing view of the university campus.
+
+Imagine a camera positioned above the main entrance, angled downward enough to reveal the entrance gate, campus roads, trees, buildings, and the general layout of the university beyond the gate.
+
+The image should feel like an aerial establishing shot taken from an elevated drone or cinematic camera, not a flat overhead map.
+
+The campus should be the main visual attraction. The main entrance and a glimpse of the campus beyond it should immediately communicate that the game takes place in a university environment.
+
+Use the redesigned campus environment where practical so the opening screen reflects the actual world the player will subsequently explore.
+
+### Menu composition
+
+Keep the following elements, where already supported by the game:
+
+- The official game logo.
+- Start New Game.
+- Continue Game, when an existing save is available.
+- Other existing essential menu options.
+
+Integrate these elements into the scene using an attractive green-and-gold visual design.
+
+The background may be subtly darkened, faded, or softened behind the menu elements to maintain legibility. However, it should remain recognizable and visually interesting.
+
+Use tasteful typography, restrained animations, subtle lighting, and polished transitions.
+
+Avoid an entirely flat green background, oversized text covering the whole screen, or unrelated decorative elements.
+
+### Functionality
+
+The main menu must remain functional.
+
+- Start New Game should initiate the new-game setup.
+- Continue Game should load the appropriate saved game when one exists.
+- Starting a new game must not accidentally overwrite an existing save without appropriate confirmation.
+- Returning players should not be forced to recreate their character unnecessarily.
+
+The redesigned screen must connect to the actual game flow rather than being a static mockup.
+
+---
+
+# 2. CREATE A PROPER NEW-GAME CHARACTER SELECTION FLOW
+
+When a player selects Start New Game, do not immediately place them into the world or use an arbitrary default character.
+
+Introduce a dedicated character-selection screen.
+
+The sequence should be:
+
+**Main Menu → Choose Character → Customize Avatar → Introductory Cutscene → Continue the Game's Existing Setup and Story**
+
+Preserve any existing setup steps, such as name selection, department selection, or other established onboarding activities. Integrate them into the appropriate position without duplicating them or removing them unnecessarily.
+
+## 2.1 Choose your character
+
+Create an attractive screen with two clearly presented character options:
+
+- Male student.
+- Female student.
+
+Use recognizable, well-designed 3D character previews or suitable animated character representations.
+
+The characters should be visually appealing and appropriate for a modern university simulation. Avoid extremely basic, primitive-looking models.
+
+Give the screen a clear heading, such as:
+
+**Choose Your Student**
+
+Include short, useful instructions and an obvious selection button for each character.
+
+The player should be able to rotate or inspect the character if supported by the engine.
+
+Selecting a character should open the corresponding customization screen.
+
+## 2.2 Make the character-selection flow meaningful
+
+The choice must determine the character model and the appropriate starting customization options.
+
+Do not make the male and female options lead to the same unchanged default avatar.
+
+The character preview, customization screen, and final in-game character must all use the same selected character identity.
+
+The choice should remain consistent throughout the game unless the existing design explicitly allows the player to change it later.
+
+---
+
+# 3. BUILD A DETAILED AVATAR CUSTOMIZATION SYSTEM
+
+After selecting a male or female student, the player must be able to customize their appearance before starting the actual game.
+
+This should be a proper customization interface, not a screen containing only two or three shirt colors.
+
+The aim is to give the player a sense of ownership over their student.
+
+## 3.1 Appearance and complexion
+
+Provide appropriate options for:
+
+- Skin complexion.
+- Hairstyle.
+- Hair color, where supported.
+- Facial features and other compatible appearance variations.
+- Additional appearance options supported by the existing character system.
+
+Offer several distinct choices instead of changing only a single color value.
+
+Ensure that skin tones, hairstyles, and other appearance options are rendered consistently in the preview and the final in-game character.
+
+## 3.2 Clothing
+
+Provide a varied wardrobe with multiple visually distinct designs.
+
+For the male character, include options such as:
+
+- T-shirts with different colors, patterns, illustrations, graphics, and lettering.
+- Shirts and other suitable tops.
+- Different trousers and shorts.
+- Different shoes and socks.
+- Caps and other headwear.
+- Backpacks, bags, and other accessories.
+- Glasses, wristwatches, and additional compatible accessories.
+
+For the female character, include options such as:
+
+- Different dresses and gowns.
+- T-shirts and other tops.
+- Trousers and shorts.
+- Suitable skirts or other clothing supported by the design.
+- Different shoes and socks.
+- Different hairstyles and headwear.
+- Handbags, backpacks, and other bags.
+- Glasses, wristwatches, and other compatible accessories.
+
+These are starting categories, not an exhaustive list.
+
+The wardrobe should offer a meaningful variety of designs, patterns, and styles. Do not satisfy the requirement by providing the same plain garment in several different colors.
+
+Use appropriate clothing geometry, textures, materials, and accessory models. Where the project uses compatible modular clothing assets, build on that system.
+
+Do not create accessories that appear in the interface but cannot actually be equipped by the character.
+
+## 3.3 Customization interface
+
+Design the interface to make customization enjoyable and easy to understand.
+
+Include:
+
+- A large, clearly visible 3D character preview.
+- Categories for clothing, hairstyles, complexion, footwear, and accessories.
+- Scrollable or otherwise browsable collections of available items.
+- Clear selection indicators.
+- The ability to change an item before confirming.
+- A Back button that preserves appropriate selections.
+- A Confirm Character or Continue button.
+
+Allow the player to inspect the character from different angles where practical.
+
+Ensure the interface remains usable at the game's supported screen resolutions and aspect ratios.
+
+Avoid covering the character with oversized interface panels.
+
+## 3.4 Clothing compatibility
+
+Equipped items must work together correctly.
+
+For example:
+
+- Bags should attach to appropriate positions.
+- Glasses should align with the face.
+- Hats should fit the head.
+- Hairstyles should not unnecessarily intersect headwear.
+- Shoes and socks should align with the feet.
+- Clothing should not produce major gaps or severe model intersections.
+- Accessories should not float beside the character or remain behind when the character moves.
+
+Where two items conflict, implement reasonable compatibility rules or provide alternatives.
+
+## 3.5 Save the customized character
+
+Once the player confirms their appearance, save the complete customization configuration as part of the player's game state.
+
+The selected avatar must remain consistent throughout the entire game session and across saved-game reloads.
+
+The same character must appear in:
+
+- The open-world campus.
+- The hostel and other interiors.
+- Transportation boarding and disembarking.
+- Dialogue scenes and cutscenes.
+- The introductory parents' arrival scene.
+- Other scripted interactions involving the player.
+
+Do not create one avatar for gameplay and a separate, unrelated default avatar for cutscenes.
+
+The selected appearance must be the source of truth for the player's character model throughout the game.
+
+If the player chooses to start a completely new game, handle character creation according to the new-game flow without corrupting existing saved games.
+
+---
+
+# 4. REDESIGN THE INTRODUCTORY PARENTS' ARRIVAL CUTSCENE
+
+The opening cutscene in which the student's parents accompany them to the university is an important introduction to the game.
+
+The current implementation feels too basic and underdeveloped. Rework it into a detailed, welcoming, cinematic scene that introduces the student, the university, and the beginning of campus life.
+
+Preserve the intended story and dialogue structure, but significantly improve the environment, character presentation, animation, composition, and atmosphere.
+
+## 4.1 Establish the university entrance as the setting
+
+The scene should take place directly in front of a beautifully designed university entrance gate.
+
+The gate must look like an actual institutional entrance, not a plain rectangular block.
+
+Incorporate:
+
+- The university's green-and-gold color scheme.
+- Attractive architectural contours and detailing.
+- A prominent university logo above or integrated into the gate.
+- A readable welcome inscription, such as "Welcome to Federal University of Omo Surulere Campus," using the exact official campus name and branding available in the project.
+- Appropriate gate pillars, decorative elements, and entrance structures.
+- A convincing view of campus buildings, trees, and roads beyond the gate.
+
+Use the actual school logo if it exists in the project. Do not invent a replacement logo unnecessarily.
+
+The gate must look detailed and professionally designed, with consistent proportions and materials.
+
+## 4.2 Compose the scene carefully
+
+Position the parents and the customized student in front of the gate so that their faces and body language are visible.
+
+Behind them, the audience should be able to see the entrance gate and the university campus beyond it.
+
+Place a road across the foreground, running approximately from the left side of the screen to the right.
+
+This road will provide environmental movement and make the scene feel like a living campus.
+
+The composition should balance the characters, gate, campus background, road, and dialogue interface.
+
+Avoid placing characters directly in front of important signage or architectural features.
+
+Do not position the dialogue box over anyone's face or obscure the university logo, gate, or main background.
+
+## 4.3 Add environmental activity
+
+The road should occasionally have believable activity during the cutscene.
+
+Examples include:
+
+- A keke passing from one side of the screen to the other.
+- A taxi or other appropriate vehicle driving past.
+- Pedestrians walking along the road or its designated walkway.
+- Other suitable background activity.
+
+These events should happen occasionally and naturally rather than constantly distracting from the conversation.
+
+Vehicles must move along the actual road surface and respect its direction and boundaries.
+
+Pedestrians must remain on suitable walkable surfaces.
+
+Background characters and vehicles must not collide with the foreground characters or pass through the gate or other solid objects.
+
+If the existing cutscene uses scripted animation, coordinate the activity with the scene's timeline.
+
+## 4.4 Show the student's belongings
+
+The student should arrive with visible luggage and belongings appropriate for moving into university accommodation.
+
+Include a combination of items such as:
+
+- Travel bags.
+- Ghana Must Go bags.
+- Cartons containing personal belongings.
+- Food supplies or provisions.
+- A backpack or other student luggage.
+
+Place the items naturally around the student and parents, as though the family has just arrived and is preparing to settle the student into university life.
+
+Use recognizable 3D models with believable proportions and placement.
+
+Do not merely display floating icons or labels representing luggage.
+
+Ensure the bags do not intersect the characters' bodies, float above the ground, or obstruct the road.
+
+Where appropriate, characters may interact with or gesture toward the belongings during the scene.
+
+## 4.5 Improve the dialogue sequence
+
+The scene should retain the intended conversation structure:
+
+1. The father speaks.
+2. The mother speaks.
+3. The student responds.
+4. The introductory scene concludes and the game proceeds.
+
+Use the existing dialogue content where it already exists, preserving the intended story and character personalities.
+
+If dialogue is missing, incomplete, or inconsistent, inspect the existing implementation before introducing new dialogue.
+
+### Dialogue interface
+
+Use a small, elegant dialogue box that complements the green-and-gold visual theme.
+
+The dialogue box must:
+
+- Remain readable.
+- Avoid covering faces.
+- Avoid obstructing the gate and campus background.
+- Display the correct speaker and message.
+- Advance in the correct sequence.
+- Allow the player to read the dialogue without the scene progressing unexpectedly.
+
+Use subtle transitions and suitable character expressions or gestures where supported.
+
+Do not let the text box dominate the scene.
+
+## 4.6 Use the customized student in the cutscene
+
+This is a critical requirement.
+
+The student standing with the parents must be the same avatar the player created during character customization.
+
+The selected hairstyle, complexion, clothing, shoes, and accessories must carry over to the cutscene.
+
+Do not replace the customized student with a generic child or a default character.
+
+The cutscene must load the saved player appearance and render it correctly within the scene.
+
+The parents should remain distinct characters with appropriate appearances and animations.
+
+The introductory scene should feel like the beginning of the player's individual university journey, not a generic scene unrelated to their chosen avatar.
+
+---
+
+# 5. MAKE HOSTEL OWNERSHIP A REAL GAME SYSTEM
+
+The player should have one designated personal hostel room or accommodation assignment.
+
+At the beginning of the game, when the player chooses and pays for a hostel, that selection must establish their actual home within the university.
+
+Do not treat every hostel in the campus as though it belongs to the player.
+
+## 5.1 Assign a permanent personal hostel
+
+When the player selects and pays for a hostel, save the following as appropriate:
+
+- The selected hostel.
+- The allocated room or accommodation unit.
+- The ownership or occupancy status.
+- The relevant payment and booking information.
+- The player's valid spawn and return location.
+
+The specific hostel and room assignment must remain consistent throughout the game and when loading the saved game.
+
+The player should not have to pay repeatedly for the same accommodation simply because they reload the game.
+
+Respect the existing accommodation selection and payment mechanics wherever they already work.
+
+## 5.2 Spawn the player in their own hostel room
+
+After the initial setup and introductory sequence are complete, the player should enter the main game at the appropriate location in their own hostel room.
+
+Do not spawn the player in a random hostel, outside a different building, or in a generic room unrelated to the accommodation they selected.
+
+The game should remember which hostel and room belong to the player.
+
+If the game already has a different established first playable location, integrate the hostel spawn into the existing story without removing essential narrative steps.
+
+When the player returns to their hostel, they should return to their own designated room.
+
+## 5.3 Distinguish personal accommodation from other hostels
+
+The player's hostel and other hostels must provide different interactions.
+
+### When visiting the player's own hostel room
+
+Allow the appropriate personal accommodation activities supported by the game, such as:
+
+- Sleeping or resting.
+- Studying.
+- Managing personal belongings.
+- Interacting with available room objects.
+- Other existing hostel activities.
+
+Only expose actions that are actually implemented and valid for the player's room.
+
+### When visiting another student's hostel
+
+The player must not automatically receive the same privileges.
+
+Provide suitable visitor interactions, such as:
+
+- Visit a friend.
+- Talk to residents.
+- Explore common areas.
+- Participate in a permitted social interaction.
+- Leave the building.
+
+Do not allow the player to claim another room as their own, sleep in it, use its private study functionality, or otherwise access owner-specific activities without the appropriate game rules permitting it.
+
+The exact interactions may vary depending on the location and the existing gameplay design.
+
+**The important distinction is that entering a hostel building does not make every room inside it the player's personal accommodation.**
+
+## 5.4 Enforce hostel permissions in the actual game logic
+
+Do not implement this distinction only by changing the names of buttons.
+
+Validate the player's accommodation assignment before permitting owner-specific actions.
+
+For example, an interaction that allows the player to sleep in their own room must verify that the room belongs to their active accommodation assignment.
+
+Visiting another hostel must not grant the player additional ownership or change their home assignment accidentally.
+
+If the game supports room-level access, use the correct room-level identity rather than checking only the building name.
+
+---
+
+# 6. MAKE DEPARTMENT MEMBERSHIP DETERMINE ACADEMIC ACCESS
+
+The student's selected department or course of study must have meaningful consequences for academic gameplay.
+
+The player should not be able to attend any department's classes and receive academic rewards simply because they entered a building.
+
+For example, if the player selects a department in the Faculty of Commerce, they must not be able to attend classes belonging to an unrelated department in the Faculty of Arts and earn credits toward their CGPA.
+
+## 6.1 Establish the player's academic identity
+
+Save the student's selected academic information as part of the game state.
+
+This should include the appropriate existing fields, such as:
+
+- Faculty.
+- Department or programme.
+- Registered courses.
+- Academic level or year, where supported.
+- Class timetable.
+- Academic progression and CGPA.
+
+Use the project's existing academic data structures where possible.
+
+The selected department must be consistent across the timetable, class activities, course registration, academic rewards, and relevant phone notifications.
+
+## 6.2 Restrict credit-bearing classes to eligible courses
+
+Only allow the player to attend classes for which they are eligible according to their selected programme and registered courses.
+
+A student must not earn course credits or CGPA improvements by attending an unrelated department's class.
+
+Validate eligibility when the player attempts to start the class, not just when displaying the class options.
+
+If the player enters an unrelated department building, they may still explore it, interact with people, or visit a friend, but those activities must not be treated as attendance in their own academic programme.
+
+If cross-departmental courses are deliberately supported in the existing game, allow them only when they are explicitly included in the player's eligible course list.
+
+Do not impose an inflexible department restriction that breaks legitimate shared courses or existing academic progression mechanics.
+
+## 6.3 Different interactions in other departments
+
+When the player visits a building belonging to another department, offer appropriate alternatives, such as:
+
+- Explore the building.
+- Visit a friend.
+- Talk to an NPC.
+- Discover information about the faculty.
+- Participate in suitable non-credit-bearing activities.
+
+These activities may provide exploration points, relationship progress, information, or other appropriate rewards.
+
+However, they must not award academic attendance credit or increase the player's CGPA as though the player had attended an eligible class.
+
+Clearly distinguish exploration rewards from academic rewards in the game's progression logic.
+
+---
+
+# 7. IMPLEMENT A TIMETABLE-BASED CLASS ATTENDANCE SYSTEM
+
+The player must not be able to attend credit-bearing classes at any arbitrary time.
+
+Classes must be scheduled, and the game must recognize whether the player has an eligible class at the current simulated time.
+
+The player's phone should play an important role in communicating the schedule.
+
+## 7.1 Create a functional class timetable
+
+Use a timetable system linked to the player's selected programme and registered courses.
+
+Each class session should have the necessary information, such as:
+
+- Course identity.
+- Eligible department or programme.
+- Scheduled day.
+- Start time.
+- End time or duration.
+- Classroom or teaching location.
+- Attendance and completion status.
+
+Use the existing game clock and academic systems if they are already implemented.
+
+If no suitable timetable exists, create a coherent one using the game's simulated schedule.
+
+Avoid generating a completely new random timetable whenever the player enters a building.
+
+The timetable must be persistent enough for the player to plan their activities and understand when classes occur.
+
+## 7.2 Send class notifications to the student's phone
+
+Before an eligible class begins, send an appropriate in-game phone notification.
+
+For example:
+
+"Reminder: Your class begins at 10:00 AM. Head to your classroom."
+
+Or:
+
+"Your course representative has announced that your next lecture starts at 12:00 PM."
+
+Notifications may come from a course representative, lecturer, academic office, or another appropriate in-game source.
+
+The exact notification style can vary, but the message must correspond to an actual scheduled class.
+
+The phone notification should include useful information about the class and, where appropriate, a way to view the timetable or locate the classroom.
+
+Do not display notifications for classes the player is not eligible to attend.
+
+Do not repeatedly send duplicate notifications for the same class because the player enters or exits a building.
+
+## 7.3 Validate class availability
+
+When the player enters their own department building, the available activities must depend on the current game time, timetable, location, and academic eligibility.
+
+If the player has an eligible class scheduled and the attendance window is open, the appropriate class-attendance interaction may be offered.
+
+If the player does not have a scheduled class, the class-attendance option must not be offered simply because they are standing inside their department building.
+
+The same rule must apply even if the player knows how to trigger the interaction through another route.
+
+Validate the scheduled session and its availability in the actual gameplay logic.
+
+## 7.4 Differentiate class time from free time
+
+When the player visits their own department building during a scheduled, eligible class session, offer the appropriate attendance activity.
+
+When the player visits the same building outside a scheduled class session, provide alternative interactions, such as:
+
+- Visit a lecturer.
+- Arrange or participate in a private study session, if supported.
+- Explore the department.
+- Talk to department NPCs.
+- Discover academic information.
+- Participate in other suitable activities.
+
+These alternatives should not be disguised versions of attending a scheduled class.
+
+Private study may provide an appropriate learning or preparation benefit, but it must not automatically count as attendance for a course that has not been scheduled.
+
+Use clear distinctions between attending a lecture, studying independently, visiting a lecturer, and exploring a building.
+
+## 7.5 Handle missed classes and completed classes
+
+The timetable system must also handle situations where:
+
+- The player arrives too early.
+- The player arrives during the valid attendance window.
+- The player arrives after the class has ended.
+- The player has already attended the class.
+- The player has missed the session.
+- A class is cancelled or rescheduled, if the game supports such events.
+
+Define reasonable attendance windows and avoid allowing the same session to award attendance rewards repeatedly.
+
+If a class has already been completed, the player should not be able to attend that exact session again to farm additional rewards.
+
+If the class has been missed, provide an appropriate explanation or the existing missed-class consequence, if applicable.
+
+Do not silently mark a missed class as attended.
+
+---
+
+# 8. SEPARATE ACADEMIC REWARDS FROM EXPLORATION AND SOCIAL REWARDS
+
+The game must have a consistent progression system that distinguishes between academic achievement and other campus activities.
+
+### Academic rewards
+
+Credit-bearing academic rewards should be linked to eligible, scheduled, completed academic activities.
+
+Examples include attendance credit, course progression, assessments, and CGPA changes, according to the existing game design.
+
+Only the appropriate academic activities should affect academic records.
+
+### Exploration and social rewards
+
+Activities such as visiting another department, exploring a building, talking to NPCs, or visiting a friend may provide other suitable rewards.
+
+These may include exploration progress, relationship improvements, discoveries, or other non-academic progression.
+
+Do not award academic credit simply for entering a building or clicking an interaction button.
+
+### Prevent reward farming
+
+Validate rewards when an activity is completed.
+
+Prevent repeated interaction with the same activity from generating unlimited rewards unless the activity is explicitly designed to be repeatable.
+
+Use the existing progression system wherever possible and avoid introducing conflicting reward systems.
+
+---
+
+# 9. INTEGRATE THE NEW SYSTEMS WITH THE EXISTING GAME
+
+The opening menu, character creator, introductory cutscene, hostel assignment, academic department, timetable, phone notifications, and progression system must work together.
+
+Use a consistent player profile and saved-game state rather than storing unrelated copies of the same information in multiple systems.
+
+The following information should remain consistent throughout the game:
+
+- The player's chosen character and appearance.
+- The student's name and identity.
+- The selected department and programme.
+- The player's registered courses and timetable.
+- The assigned hostel and room.
+- The student's academic progress and CGPA.
+- The current class session and attendance status.
+- The player's current game state and saved progress.
+
+For example, the customized character displayed in the opening cutscene must be the same character used in the campus. The hostel selected during setup must be the hostel used for spawning and personal activities. The department selected during onboarding must determine the student's eligible classes and academic rewards.
+
+When Continue Game is selected, restore the appropriate saved state rather than restarting the onboarding sequence.
+
+When Start New Game is selected, initialize a new player profile using the existing save-management conventions, without unintentionally destroying unrelated saved progress.
+
+Preserve existing game features that are not being changed.
+
+---
+
+# 10. IMPLEMENTATION AND TESTING REQUIREMENTS
+
+Before making modifications, inspect the existing code and identify the systems responsible for these features.
+
+Implement the changes in the existing architecture. Reuse existing models, components, game-state structures, save systems, dialogue logic, and interaction systems wherever appropriate.
+
+Do not create a separate mockup that looks correct but is disconnected from the actual game.
+
+Do not replace working game mechanics with hard-coded demonstrations.
+
+Do not remove existing features simply because a new implementation would be easier to create from scratch.
+
+After implementation, verify the following scenarios.
+
+### Main menu and onboarding
+
+- The redesigned main menu displays the campus background and green-and-gold visual identity.
+- Start New Game opens the character-selection flow.
+- Continue Game restores the correct saved game.
+- The player can choose a male or female character.
+- The appropriate customization screen opens.
+- Character selections can be changed before confirmation.
+- The final avatar reflects the selected appearance and equipment.
+
+### Introductory cutscene
+
+- The university gate is detailed and recognizable.
+- The gate displays the appropriate university branding.
+- Campus buildings are visible in the background.
+- The parents and customized student are positioned correctly.
+- Luggage and belongings are present and properly placed.
+- Background vehicles and pedestrians move naturally.
+- Dialogue boxes remain readable and do not obscure the scene.
+- The father, mother, and student speak in the intended order.
+- The customized student remains visually consistent with the player's chosen avatar.
+
+### Hostel ownership
+
+- The player can select and pay for an appropriate hostel.
+- The selected accommodation is saved.
+- The player spawns in the designated personal room at the appropriate stage of the game.
+- The player retains access to their own room's permitted activities.
+- Other hostels provide visitor-appropriate interactions.
+- Visiting another hostel does not grant personal ownership or unrestricted access to owner-only activities.
+
+### Academic eligibility
+
+- The selected department is saved.
+- The timetable corresponds to the student's eligible courses.
+- Unrelated classes do not award academic credit.
+- Legitimately shared courses remain available where configured.
+- Entering another department does not automatically grant access to its credit-bearing classes.
+- Exploration and social rewards remain separate from academic rewards.
+
+### Timetable and phone
+
+- The phone receives relevant class notifications.
+- Notifications correspond to actual scheduled sessions.
+- A valid class interaction appears during the appropriate attendance window.
+- Class attendance is unavailable when no eligible class is scheduled.
+- Alternative department activities remain available outside class time.
+- Missed and completed classes are handled correctly.
+- Repeating an interaction does not award duplicate attendance credit or unlimited rewards.
+
+Test the integrated experience and fix any regressions caused by the modifications.
+
+Do not claim that a feature works unless it has actually been implemented and tested. If some tests require manual gameplay, identify the remaining tests honestly.
+
+---
+
+# FINAL OBJECTIVE
+
+Deliver a polished, immersive university-life simulation in which the player creates a personalized student, arrives at the university in a detailed introductory cutscene, settles into their own accommodation, follows an actual academic timetable, attends eligible classes, and explores the wider campus through meaningful interactions.
+
+The game should recognize the difference between the player's personal space, their academic responsibilities, and the wider university environment.
+
+The opening experience should feel cinematic and welcoming. The character creator should provide meaningful customization. Hostel ownership should have practical consequences. Department membership should govern academic eligibility. Class attendance should depend on the timetable, and rewards should reflect what the player actually does.
+
+**Implement these changes directly in the existing TerraSkills 3D project and integrate them with the previously specified campus redesign and transportation requirements. Do not stop at a visual redesign or a proposed implementation plan.**

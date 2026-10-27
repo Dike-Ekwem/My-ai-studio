@@ -1,0 +1,6 @@
+{
+  "name": "UNDERGRAD — 3D Nigerian University Life Simulator",
+  "description": "A playable 3D university-life simulation game set at the Federal University of Omo, Central Abuja. Explore campus, attend classes, manage finances in Naira, ride kekes, make friends, and experience Nigerian university life.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

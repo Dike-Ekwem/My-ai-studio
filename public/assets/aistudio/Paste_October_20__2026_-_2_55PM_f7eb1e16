@@ -1,0 +1,640 @@
+# TERRASKILLS 3D — CORRECTIVE UPDATE: RESTORE THE ORIGINAL MENU AND REBUILD THE CAMPUS PROPERLY
+
+## IMPORTANT: READ BEFORE MODIFYING THE PROJECT
+
+This is a corrective update to the existing TerraSkills 3D game. Previous modifications did not follow the intended requirements correctly.
+
+I want you to inspect the current implementation, compare it with the original design where possible, and correct the specific issues described below.
+
+**Do not reinterpret these instructions as permission to redesign every existing screen. Restore the elements I explicitly want restored, change the elements I have identified, and preserve everything else that is already working correctly.**
+
+Do not rename the game, replace the original main-menu background, or introduce a new visual direction unless explicitly requested below.
+
+# 1. RESTORE THE ORIGINAL MAIN MENU
+
+The previous modification incorrectly changed the main-menu title from "Undergrad" to "TerraSkills 3D" and replaced the original green-and-gold background with an unattractive 3D view of the campus.
+
+These changes must be reversed.
+
+### 1.1 Restore the original title
+
+Restore the original main-menu title exactly as it appeared before the recent modification:
+
+**Undergrad**
+
+Do not display "TerraSkills 3D" as the replacement title.
+
+Inspect the existing project history, original assets, or previous implementation to recover the original title styling and placement if available.
+
+Preserve the existing game identity and branding associated with the original screen.
+
+### 1.2 Restore the original green-and-gold background
+
+Restore the original green-and-gold main-menu background that existed before the recent redesign.
+
+I do not want the new campus-gate camera view on the main menu. The previous attempt did not look good, so remove that replacement and restore the original background.
+
+Preserve the original background's composition, colors, visual elements, and general arrangement as closely as possible.
+
+Do not create another campus photograph, aerial view, 3D campus scene, or replacement background for this screen.
+
+The requested change is to restore the original menu, not redesign it again.
+
+### 1.3 Improve the game description only
+
+Keep the restored title and background, but replace the existing description beneath the title with a concise, attractive overview of the game.
+
+The current description focuses too heavily on riding kekes and other individual activities. The description should communicate the broader experience of being a university student.
+
+Use the following copy, retaining its concise three-line presentation:
+
+"Create your own student identity and shape your university journey.
+Attend classes, make friends, explore campus life, and build your future.
+Your story as an undergraduate starts here."
+
+You may adjust the line wrapping to fit the existing layout, but do not expand this into a long paragraph.
+
+### 1.4 Refine the typography
+
+Make the title and description typography more polished.
+
+- Use a slightly bolder, attractive font weight.
+- Keep the text elegant and readable.
+- Do not make the title or description excessively large.
+- Maintain appropriate spacing between the title, description, and menu buttons.
+- Ensure sufficient contrast against the original background.
+- Preserve the existing Start New Game, Continue Game, and other functioning menu controls.
+
+The result should feel professional, balanced, and visually appealing without looking exaggerated.
+
+### 1.5 Remove the campus location from the main menu
+
+Do not display "Federal University of Omo Surulere Campus" or other lengthy campus-location text on the main menu.
+
+That inscription belongs on the physical university entrance gate in the introductory arrival cutscene, as specified in Section 2.
+
+Keep the main menu focused on the Undergrad title, concise game description, original green-and-gold background, and existing menu options.
+
+**Acceptance criteria:** The main menu should look substantially like the original version again. The title is Undergrad, the original green-and-gold background is restored, the description is improved, and the campus location is no longer displayed on this screen.
+
+---
+
+# 2. IMPROVE THE INTRODUCTORY ARRIVAL CUTSCENE AND UNIVERSITY GATE
+
+The location inscription must appear on the university gate in the introductory cutscene, where the parents arrive with their child.
+
+Do not put this inscription back on the main menu.
+
+### 2.1 Redesign the physical entrance gate
+
+Create a beautiful, detailed university entrance gate with a distinctive architectural design.
+
+Avoid a plain rectangular structure, a basic cube-like gate, or a single straight beam with text placed on it.
+
+Use appropriate architectural features such as:
+
+- Detailed entrance pillars.
+- Decorative contours and architectural mouldings.
+- Green-and-gold color accents.
+- A prominent university logo integrated into the gate.
+- Attractive signage and suitable lighting.
+- A coherent, professionally designed entrance structure.
+
+The gate should look like an important institutional landmark.
+
+### 2.2 Display the official campus inscription
+
+The gate must prominently display:
+
+**WELCOME TO FEDERAL UNIVERSITY OF OMO SURULERE CAMPUS**
+
+Position the inscription on the gate itself, in a clearly visible area, with suitable lettering and spacing.
+
+Use the green-and-gold school colors in the gate's design. The logo should be positioned attractively above the inscription or integrated into the upper portion of the structure.
+
+If the project already contains the official university logo, reuse it.
+
+Ensure the inscription is readable from the camera angle used in the cutscene. Do not place the text where it is hidden behind characters or cropped out of the scene.
+
+### 2.3 Preserve the arrival scene
+
+The parents and the player's customized student must remain in front of the gate.
+
+The campus buildings should be visible beyond the gate in the background, creating the impression that the family has arrived at the university.
+
+Retain the intended dialogue sequence and other existing cutscene functionality.
+
+The gate redesign must not break character positioning, dialogue progression, or the transition into the main game.
+
+---
+
+# 3. REDESIGN THE ENTIRE CAMPUS LAYOUT AND ROAD NETWORK
+
+The transportation system has improved in one respect: the keke can now travel toward the selected destination rather than instantly teleporting the player.
+
+However, the road network passes through buildings. This is a fundamental layout problem that must be corrected.
+
+**Do not merely adjust the keke's movement. Redesign the underlying campus layout so that the roads and buildings occupy separate, appropriate spaces.**
+
+The campus should be significantly larger and more spacious to accommodate the road network, buildings, landscaping, central landmark, mascot statues, and perimeter fence.
+
+## 3.1 Establish a proper campus master plan
+
+Reorganize the entire campus into a coherent layout before adjusting individual objects.
+
+Create a clear hierarchy of roads:
+
+- A main road running through the campus.
+- A central roundabout around the primary campus landmark.
+- Secondary roads branching from the main road.
+- Access roads connecting individual buildings and facilities.
+- Appropriate junctions, turns, and connecting lanes.
+- Designated drop-off points near buildings.
+- Pedestrian walkways connecting buildings, roads, and public spaces.
+
+The main road should connect logically to the secondary roads, and the secondary roads should lead toward the buildings they serve.
+
+Avoid random road segments, disconnected roads, unnecessarily complicated intersections, and roads that end without a clear purpose.
+
+The layout should resemble a professionally planned university campus.
+
+## 3.2 Buildings must sit alongside roads, not on them
+
+This is a strict requirement.
+
+No building may occupy the same physical space as a road.
+
+No road may pass through a building's footprint, walls, or interior.
+
+Buildings should be positioned alongside roads, with their main entrances facing an appropriate approach area.
+
+For example, a building may stand beside a secondary road, with its main entrance facing the road and a pedestrian path connecting the entrance to the surrounding campus.
+
+Where a vehicle needs to reach a building, provide an appropriate driveway, access lane, or nearby drop-off point.
+
+Do not position a building across a road and then attempt to make the vehicle drive through it.
+
+### Required implementation
+
+Inspect the actual positions, dimensions, and collision geometry of all existing buildings and roads.
+
+Correct overlaps by repositioning buildings, rerouting roads, or adjusting the campus layout as necessary.
+
+If the campus is generated procedurally, correct the underlying placement rules rather than applying isolated visual fixes to a few objects.
+
+Ensure the final road geometry, building geometry, and collision geometry agree with one another.
+
+## 3.3 Vehicles must follow the corrected roads
+
+The keke and shuttle systems must continue to function after the redesign.
+
+Vehicles must follow the actual road network and reach destinations through valid connected routes.
+
+They must:
+
+- Stay on designated driveable road surfaces.
+- Follow the main roads and branching access roads.
+- Turn at the appropriate junctions.
+- Avoid driving through buildings.
+- Avoid driving across grass, gardens, ponds, and pedestrian-only paths.
+- Stop at suitable drop-off points near their destinations.
+- Remain within the physical boundaries of the roads.
+
+Do not solve the building-intersection problem by teleporting vehicles around obstacles or temporarily hiding buildings.
+
+The correct solution is a coherent road network with properly positioned buildings and valid vehicle routes.
+
+### Road access to buildings
+
+Every important building should have a valid access arrangement.
+
+Where the road runs in front of a building, provide a suitable drop-off point or safe stopping area.
+
+Where a building is set back from the road, provide a connected access lane or pedestrian path.
+
+The player should be able to arrive near the building and walk to its entrance without having to cross through landscaping or solid structures.
+
+---
+
+# 4. ENSURE ALL BUILDINGS HAVE PROPER DOORS AND WINDOWS
+
+Every building must look architecturally complete.
+
+The current environment needs more convincing building designs, with clear entrances and appropriate exterior detailing.
+
+### 4.1 Main entrances
+
+Every accessible building must have a clearly identifiable main entrance.
+
+The main door should be positioned on an appropriate exterior face of the building, preferably facing an accessible road or pedestrian approach.
+
+Use a door design appropriate to the building type. Some buildings may have wide double doors or prominent institutional entrances rather than narrow, basic doors.
+
+The entrance must connect logically to the interior and the existing building-interaction system.
+
+The "Press E to Enter" interaction must only become available when the player approaches the designated entrance, not simply when standing beside any wall.
+
+### 4.2 Windows and exterior details
+
+All buildings should have appropriate windows and other architectural details.
+
+Avoid large, featureless walls, randomly placed windows, and windows that intersect other geometry.
+
+Use consistent window proportions, sensible spacing, suitable frames, and materials that complement each building's architecture.
+
+The building exterior should look designed rather than procedurally assembled without visual planning.
+
+### 4.3 Increase architectural variety
+
+Do not make every building look identical.
+
+Give different building categories appropriate visual identities while maintaining a consistent campus style.
+
+For example, academic buildings, administrative blocks, lecture halls, and hostels can have different facades, entrance designs, window arrangements, and architectural features.
+
+Maintain sufficient spacing between structures and ensure that their doors and windows are not obstructed by roads, other buildings, or landscaping.
+
+---
+
+# 5. VARY BUILDING HEIGHTS AND REDESIGN SOME OF THE ROOFS
+
+The campus should have a more varied skyline and more attractive architectural silhouettes.
+
+At present, many structures are too low, too similar, or visually basic.
+
+## 5.1 Introduce taller buildings
+
+Include a mixture of building heights.
+
+Some buildings should remain relatively low, while others should have multiple storeys.
+
+Specifically:
+
+- Include some four-storey academic and administrative buildings.
+- Allow selected hostels to be taller where appropriate.
+- Give major facilities greater visual prominence.
+- Maintain realistic proportions and sufficient clearance around taller structures.
+
+The aim is to create a believable university skyline with architectural variety, not to make every building extremely tall.
+
+Ensure that stairs, floors, entrances, windows, and other visible features remain consistent with each building's height.
+
+If buildings are enterable, do not create extra visible storeys without appropriate support from the existing interior system.
+
+## 5.2 Replace some flat roofs
+
+I do not want every building to have a flat roof.
+
+Redesign approximately half of the building roofs to use more visually interesting pitched or sloped forms.
+
+Suitable options include:
+
+- Triangular gable roofs.
+- Pyramidal roofs.
+- Hipped roofs.
+- Other appropriately detailed pitched roof designs.
+
+Some buildings may retain flat roofs, particularly where that design makes architectural sense. The intention is to introduce variety rather than eliminate every flat roof.
+
+Ensure that roof geometry fits the building underneath it and does not intersect neighboring structures.
+
+Use appropriate roof materials, edges, overhangs, and other details to improve the final appearance.
+
+**Important:** The roofs must be real parts of the building geometry, not merely decorative triangular objects floating above flat roofs.
+
+---
+
+# 6. CREATE A CENTRAL LANDMARK TOWER AND ROUNDABOUT
+
+The center of the redesigned campus must have a striking architectural landmark.
+
+This was part of the original request and must not be omitted during the road redesign.
+
+## 6.1 Position the landmark at the campus center
+
+Create a prominent road roundabout in the central area of the campus.
+
+At the center of the roundabout, construct a tall, detailed tower or tower-like structure.
+
+The road network must be designed around this landmark, with the main road and connected routes flowing logically around the roundabout.
+
+Do not place the tower randomly in an area that obstructs traffic.
+
+The roundabout should be large enough for vehicles to navigate it without colliding with the central structure or leaving the road.
+
+## 6.2 Tower design
+
+The tower should be tall and visually distinctive, with an elegant, somewhat conical or castle-inspired silhouette.
+
+Use architectural detailing such as:
+
+- A substantial base or pedestal.
+- A well-defined central body.
+- Tapered or tiered upper sections.
+- Decorative architectural contours.
+- Appropriate green-and-gold accents.
+- Suitable lighting and materials.
+- A carefully designed top or crown.
+
+The tower should feel like a permanent university landmark, not a primitive cone placed on the ground.
+
+Use an attractive design that fits the scale and identity of the campus.
+
+## 6.3 Integrate the university logo
+
+Place the university logo prominently on the tower's body, preferably at a central, clearly visible position.
+
+Use the existing official logo if available.
+
+Ensure the logo is readable at an appropriate viewing distance and is properly aligned with the tower's surface.
+
+Do not place the logo where it is hidden behind other geometry or distorted by an unsuitable texture.
+
+The tower should become one of the most recognizable landmarks in the university.
+
+---
+
+# 7. ADD THREE OR FOUR LARGE MASCOT STATUES
+
+Construct approximately three or four substantial statues representing the university's mascot: the Monopoly-style gentleman with a formal suit and top hat.
+
+The statues should be distributed across the campus at strategically chosen locations.
+
+Possible locations include the main entrance plaza, a central student gathering area, a major academic district, and another prominent public space.
+
+### Design requirements
+
+Each statue should have:
+
+- A recognizable mascot silhouette.
+- A formal suit and top hat.
+- Appropriate body proportions and pose.
+- Detailed geometry and materials.
+- A suitable pedestal or base.
+- Optional campus branding or a commemorative plaque.
+
+Make the statues large enough to function as landmarks.
+
+Use a consistent design identity across the statues, while allowing modest differences in pose if appropriate.
+
+Do not substitute unrelated characters for the mascot.
+
+If an approved mascot model already exists in the project, use it as the reference.
+
+### Placement requirements
+
+The statues must fit naturally into the campus master plan.
+
+Do not place them in the middle of roads, on top of building entrances, or where they obstruct pedestrians and vehicles.
+
+Place them in plazas, landscaped islands, or other suitable locations.
+
+For the central statue, ensure that its pedestal and the surrounding roundabout are properly coordinated so that neither vehicles nor pedestrians collide with the structure.
+
+---
+
+# 8. MAKE THE CAMPUS LARGER AND ENCLOSE IT WITH A PERIMETER FENCE
+
+The campus should be expanded to accommodate the redesigned buildings, road network, landmark tower, mascot statues, landscaping, and other facilities.
+
+Do not attempt to fit every new feature into the existing footprint if doing so creates overcrowding or overlapping geometry.
+
+## 8.1 Expand the campus coherently
+
+Increase the usable campus area where necessary.
+
+Distribute buildings and facilities across clearly defined zones.
+
+Provide sufficient space for:
+
+- Main and secondary roads.
+- Building plots and access routes.
+- Pedestrian paths.
+- The central roundabout and tower.
+- Mascot statues and plazas.
+- Landscaped areas and benches.
+- Hostels and other university facilities.
+
+The larger campus must still feel connected and navigable.
+
+Do not simply stretch the existing ground while leaving buildings clustered in one area and empty space elsewhere.
+
+## 8.2 Build a perimeter fence
+
+Construct a continuous fence around the university campus to distinguish the university grounds from the surrounding outside world.
+
+Use a detailed, attractive fence design with green-and-gold elements.
+
+The fence should follow the campus perimeter and integrate properly with the entrance gate.
+
+Include suitable supporting pillars, sections, and architectural detailing. Ensure the fence has appropriate collision geometry so that characters and vehicles cannot walk or drive straight through it.
+
+Do not allow the fence to intersect buildings, roads, or other important structures.
+
+### Main entrance connection
+
+The main gate must connect naturally to the perimeter fence.
+
+Roads must lead to the gate and connect appropriately to the internal campus road network.
+
+The gate must not be an isolated decorative object disconnected from the campus boundary.
+
+## 8.3 Keep the off-campus hostel outside the fence
+
+The off-campus hostel must remain outside the university perimeter.
+
+This is an explicit spatial requirement.
+
+Do not accidentally enclose it within the university fence when expanding the campus.
+
+Position it clearly beyond the campus boundary while maintaining an appropriate access route to the university entrance.
+
+Its road access must remain functional, and the player should be able to travel between it and the campus using the existing transportation system where supported.
+
+The fence must distinguish university grounds from the surrounding external environment.
+
+---
+
+# 9. FIX NPC MOVEMENT SO CHARACTERS DO NOT FREEZE AT OBSTACLES
+
+There is a separate NPC movement problem that must be corrected.
+
+Some NPCs become completely stationary when they encounter an obstacle. They appear to freeze instead of finding another route or continuing their intended activity.
+
+NPCs must move naturally throughout the campus and respect the physical environment.
+
+## 9.1 Implement obstacle avoidance and route recovery
+
+When an NPC encounters an obstacle, the NPC should not remain frozen indefinitely.
+
+The movement system should determine whether the NPC can navigate around the obstacle, find an alternative route, or wait briefly for the obstruction to clear.
+
+If the current route is blocked, the NPC should attempt to recalculate its path or move toward a valid nearby waypoint.
+
+Do not repeatedly issue the same failed movement command without detecting that the NPC is stuck.
+
+Implement suitable stuck detection, route recovery, and movement-state handling.
+
+Where appropriate, NPCs should:
+
+- Slow down near obstacles.
+- Adjust their movement direction.
+- Navigate around other characters.
+- Recalculate routes when paths become blocked.
+- Resume their intended activities after an obstruction clears.
+
+If an NPC cannot find a valid route, it should handle that situation gracefully rather than freezing forever or repeatedly pushing against the obstacle.
+
+## 9.2 Prevent NPCs from passing through buildings
+
+NPCs must not walk through building walls, solid structures, or other non-walkable geometry.
+
+The navigation system must use the actual campus layout and recognize buildings as obstacles.
+
+Pedestrian routes should use valid walkable surfaces, paths, and designated crossings.
+
+The pond must remain non-walkable, and NPCs must use the bridge or an alternative safe route when appropriate.
+
+The NPC movement system must respect collision and navigation constraints consistently.
+
+## 9.3 Keep NPC behavior believable
+
+NPCs should continue their intended activities after successfully navigating an obstacle.
+
+For example, an NPC walking toward a building should continue toward its destination after going around a tree or another pedestrian.
+
+Do not solve the problem by teleporting stationary NPCs to random positions.
+
+Do not disable collision to make NPCs move more freely.
+
+Correct the underlying navigation and movement-state problems so NPCs can continue moving naturally while respecting the environment.
+
+## 9.4 Rebuild navigation after the campus redesign
+
+The campus geometry will change significantly, so regenerate or update the relevant navigation data after moving buildings, constructing roads, adding the fence, and changing the landscape.
+
+Ensure the NPC navigation system uses the final geometry rather than stale navigation data from the previous layout.
+
+Test NPC movement around buildings, road junctions, narrow paths, the pond bridge, and the campus perimeter.
+
+---
+
+# 10. IMPLEMENTATION ORDER AND PROTECTION OF EXISTING FEATURES
+
+Implement these changes as a coordinated update, but work in a technically sensible order.
+
+### Priority 1: Restore the main menu
+
+Restore the original Undergrad title and green-and-gold background. Replace only the description and refine the typography. Keep the campus location on the arrival gate rather than the main menu.
+
+### Priority 2: Correct the campus master plan
+
+Inspect the existing layout and correct the positions of buildings and roads.
+
+Expand the campus where necessary. Establish the main road, secondary roads, central roundabout, building access routes, and perimeter fence.
+
+### Priority 3: Correct building geometry
+
+Give buildings appropriate doors, windows, heights, and roof designs. Ensure they are positioned alongside the roads rather than intersecting them.
+
+### Priority 4: Add the central landmarks
+
+Construct the tower, integrate the university logo, and position three or four mascot statues appropriately.
+
+### Priority 5: Fix movement and navigation
+
+Update vehicle routes and NPC navigation to reflect the final geometry.
+
+Ensure vehicles follow roads, NPCs avoid obstacles, and characters do not pass through buildings or freeze indefinitely.
+
+### Priority 6: Improve the arrival gate
+
+Redesign the gate and display "Welcome to Federal University of Omo Surulere Campus" on the physical gate in the introductory cutscene.
+
+### Priority 7: Test the integrated environment
+
+Test the complete campus after the changes rather than testing each feature only in isolation.
+
+## Technical requirements
+
+Before modifying files, inspect the existing project architecture and identify the relevant source files and systems.
+
+- Reuse the existing game engine and rendering technology.
+- Preserve the existing game title and menu assets wherever they remain appropriate.
+- Correct the underlying procedural placement rules if the environment is generated by code.
+- Maintain consistent road geometry, collision geometry, and navigation data.
+- Keep vehicle routes synchronized with the actual road network.
+- Preserve functioning transportation, building entry, character customization, hostel, academic, and progression systems.
+- Avoid unnecessary rewrites of unrelated features.
+- Do not replace functional systems with visual mockups.
+- Do not claim a feature has been tested if it has not been tested.
+
+If the project has version history or a previously working copy of the original main menu, use it to restore the exact original design instead of guessing at its appearance.
+
+If exact restoration is not possible from the available source, preserve the closest existing original assets and explicitly identify any remaining difference.
+
+---
+
+# 11. FINAL ACCEPTANCE CHECKLIST
+
+Before declaring the update complete, verify the following.
+
+### Main menu
+
+- [ ] The title is restored to Undergrad.
+- [ ] The original green-and-gold background is restored.
+- [ ] The campus-gate camera background is removed from the main menu.
+- [ ] The description is concise, catchy, and approximately three lines.
+- [ ] Typography is bold enough to be attractive but not oversized.
+- [ ] The campus location is no longer displayed on the main menu.
+- [ ] Existing menu controls still function.
+
+### Campus roads and buildings
+
+- [ ] No building intersects a road.
+- [ ] Roads do not pass through buildings.
+- [ ] Buildings are positioned alongside roads with accessible entrances.
+- [ ] Main and secondary roads form a coherent network.
+- [ ] Vehicles follow the road network without driving through buildings.
+- [ ] Every important building has appropriate road or pedestrian access.
+- [ ] Buildings have recognizable main doors and suitable windows.
+
+### Campus architecture
+
+- [ ] The campus has been expanded appropriately.
+- [ ] Some buildings have four storeys.
+- [ ] Selected hostels and other facilities have greater height where appropriate.
+- [ ] Approximately half of the building roofs have varied pitched designs.
+- [ ] The central roundabout and tower are correctly positioned.
+- [ ] The tower has an appropriate architectural design and university logo.
+- [ ] Three or four mascot statues are placed in suitable campus locations.
+- [ ] The perimeter fence is continuous and uses the green-and-gold design.
+- [ ] The main gate connects correctly to the fence.
+- [ ] The off-campus hostel remains outside the perimeter fence.
+
+### NPC movement
+
+- [ ] NPCs do not walk through buildings.
+- [ ] NPCs do not enter the pond.
+- [ ] NPCs navigate around ordinary obstacles.
+- [ ] NPCs can recover when their current route becomes blocked.
+- [ ] NPCs do not remain frozen indefinitely after encountering an obstacle.
+- [ ] NPCs resume their intended activities after navigating around obstacles.
+
+### Arrival cutscene
+
+- [ ] The university gate is detailed and attractive.
+- [ ] The gate displays "Welcome to Federal University of Omo Surulere Campus."
+- [ ] The university logo is appropriately positioned on the gate.
+- [ ] The green-and-gold school identity is maintained.
+- [ ] The parents and customized student remain correctly positioned.
+- [ ] The campus is visible in the background.
+- [ ] The cutscene's dialogue and existing progression remain functional.
+
+# FINAL DIRECTIVE
+
+**Restore the original main menu instead of redesigning it again. Redesign the campus itself so that the roads, buildings, entrances, roundabout, tower, statues, and perimeter fence form one coherent environment. Fix NPC movement at the underlying navigation level, and ensure that the keke and shuttle travel along valid roads that never intersect buildings.**
+
+Make these modifications directly in the existing project. Do not stop at describing the changes, generating a mockup, or changing a few visual elements while leaving the underlying problems unresolved.
+
+After implementation, report which requirements have actually been completed, which have been tested, and which still need attention.

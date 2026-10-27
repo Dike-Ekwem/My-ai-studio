@@ -1,0 +1,414 @@
+# UNDERGRAD: THE REVOLUTION — TRANSFORM THE GAME INTO A DEEP, LIVING UNIVERSITY-LIFE SIMULATOR
+
+You are working on my EXISTING 3D game, **Undergrad**, set at Federal University of Omo Surulere Campus in Nigeria.
+
+This is not a request for another ordinary feature update, a graphics-only overhaul, or a collection of disconnected minigames. I want you to rethink and substantially upgrade the game's underlying design, simulation architecture, progression, player agency and world behaviour.
+
+**Your mission is to transform Undergrad from its current state into a distinctive, ambitious, commercially minded 3D university-life sandbox with genuinely emergent gameplay, deep replayability and a strong Nigerian identity.**
+
+Think like a combination of a senior open-world game director, systems designer, gameplay programmer, AI engineer, narrative designer and technical artist.
+
+Use the ambition of major open-world and life-simulation games as a quality reference, but develop original mechanics, characters, stories and visual identity. Do not copy proprietary assets or simply imitate another game.
+
+## NON-NEGOTIABLE RULES
+
+1. Inspect the actual project, codebase, engine, architecture, existing systems and current gameplay before changing anything.
+2. Preserve the existing game, its identity, saved progress and functioning mechanics. Do not replace the project with a new demo or unrelated template.
+3. Keep the name **Undergrad**, the Nigerian federal-university setting, and the established green-and-gold identity of the main menu.
+4. Build interconnected systems rather than isolated features. A player's actions, NPC decisions, campus events, money, relationships, reputation and academic progress should influence one another.
+5. Do not fake functionality with decorative UI, buttons that do nothing, scripted animations presented as simulation, or hard-coded outcomes pretending to be dynamic.
+6. Implement real functionality using the project's existing engine and compatible architecture. Do not introduce an entirely new engine or major dependency without a compelling technical reason.
+7. Be realistic about performance and project limitations. Use simplified simulation for distant NPCs when necessary, but make nearby characters and important events feel convincing.
+8. Implement and test in controlled phases. Do not attempt to rewrite everything blindly in one pass.
+9. When a system already exists, improve or extend it instead of creating a competing duplicate.
+10. Never report a feature as complete unless its core behaviour actually works in the running game.
+
+# THE TEN MAJOR TRANSFORMATIONS
+
+## 1. Create a persistent, autonomous university society
+
+**Replace the feeling of a populated map with the feeling of a university full of people living their own lives.**
+
+Build a persistent NPC simulation system. NPCs should have more than random walking animations and generic dialogue.
+
+Give each important NPC a coherent identity containing appropriate attributes such as:
+
+- Name, appearance, personality and student or staff role.
+- Department, academic level, accommodation and daily commitments.
+- Interests, ambitions, skills, financial circumstances and social preferences.
+- Friendships, rivalries, family or social connections where appropriate.
+- Current goals, recent experiences and memories of significant interactions.
+- A schedule that changes according to classes, events, deadlines, weather and personal circumstances.
+
+NPCs should move between meaningful activities: attending lectures, studying, eating, playing sports, socialising, running businesses, attending events and returning to accommodation.
+
+Create a layered simulation architecture:
+
+- **Near the player:** detailed interactions, navigation, reactions, animations and active decision-making.
+- **Elsewhere on campus:** simplified schedules, relationships and state updates without requiring every character to execute expensive real-time behaviour.
+- **When the player returns:** the world should reflect important events that occurred while they were away.
+
+NPCs should react to context. A student who is late for a lecture should behave differently from one heading to a football match. A vendor should not abandon their stall without reason. Characters should recover from blocked paths rather than getting stuck indefinitely.
+
+Make a smaller set of named, persistent characters especially memorable. Their lives should develop over time, not reset whenever the player leaves an area.
+
+**Acceptance test:** Follow several NPCs through different parts of a simulated day. Verify that their activities, relationships and locations change coherently, that important changes persist, and that the population does not destroy performance.
+
+## 2. Introduce an emergent-event director
+
+**Make the campus generate unexpected situations from its current state.**
+
+Create a central event system that observes world conditions and combines existing mechanics to produce believable, varied events.
+
+Potential events include:
+
+- A lecturer announces a surprise assessment.
+- A departmental competition causes rival groups to challenge one another.
+- A popular food vendor runs out of supplies during lunchtime.
+- A hostel dispute spreads through a friendship group.
+- A campus concert attracts a crowd and disrupts normal movement.
+- A football final draws students away from their usual activities.
+- A transport shortage causes delays and increases demand for alternatives.
+- A student organisation recruits members ahead of an election.
+- Heavy rain changes outdoor plans and affects travel.
+- A lost item, overheard conversation or favour creates an unexpected opportunity.
+
+These must not merely be random pop-up messages. Where possible, events should emerge from connected systems and have observable consequences.
+
+For example:
+
+A football final is announced → students spread the news → vendors anticipate increased demand → players and spectators travel to the stadium → roads and walkways become busier → the winning department gains prestige → rivalry and social conversations change afterwards.
+
+Build an event director that considers world state, location, time, player history and recent events. Use rules, weighted selection or other architecture appropriate to the existing engine.
+
+Avoid repetitive events, excessive interruptions and artificial drama. Give players opportunities to participate, ignore events or influence their outcomes.
+
+**Acceptance test:** Play through multiple in-game days and verify that events can arise from changing conditions, create consequences and produce different outcomes across saves.
+
+## 3. Build a meaningful academic and career progression simulation
+
+**Turn university into a genuine gameplay system, not a backdrop with occasional classroom cutscenes.**
+
+Develop a connected academic progression model around the existing timetable, courses and semester systems.
+
+Include:
+
+- Course registration and eligibility.
+- Lecture attendance, timetable conflicts and deadlines.
+- Assignments, quizzes, practicals, examinations and results.
+- Study sessions and revision opportunities.
+- Academic performance affected by preparation, attendance and time management.
+- Skills gained through practical work, projects and extracurricular activities.
+- Department-specific opportunities and progression milestones.
+- Scholarships, internships, research opportunities and student leadership positions where appropriate.
+
+Make decisions involve trade-offs. A student might spend the afternoon studying, earning money, attending a club meeting, training for a tournament or helping a friend.
+
+Those choices should influence time, finances, relationships and performance rather than being cosmetic dialogue options.
+
+Introduce meaningful consequences without making the game unnecessarily punishing. Provide ways to recover from poor results, missed opportunities and scheduling mistakes.
+
+Represent coursework through interactive gameplay and fictional assessments, not by pretending the game teaches complete real-world university courses.
+
+**Acceptance test:** Complete an academic cycle and verify that player choices produce measurable differences in performance, skills, eligibility and future opportunities.
+
+## 4. Introduce a living campus economy
+
+**Make money, businesses and resources behave like a connected economy.**
+
+Expand the existing Omo-Pay and campus businesses into an economic simulation.
+
+Potential systems:
+
+- Allowances, savings, spending and recurring expenses.
+- Food prices and availability.
+- Vendor stock, restocking and demand.
+- Transport fares and travel costs.
+- Hostel fees, rent or accommodation expenses where supported.
+- Part-time work, paid tasks and student entrepreneurship.
+- Purchasable equipment, clothing, food and recreational activities.
+- Discounts, reputation-based opportunities and changing customer demand.
+
+Prices and supplies should respond to understandable factors such as popularity, scarcity, time and major campus events. Do not introduce arbitrary price changes simply to make the game harder.
+
+Allow the player to make meaningful economic decisions. For example, the player could save money for better equipment, start a small student business, work a shift or spend on a social event.
+
+NPCs and vendors should also respond to the economy where technically feasible.
+
+Create a coherent interface showing available money, recent transactions, expenses and relevant business information. Integrate it with the existing Omo-Pay system rather than building a disconnected wallet.
+
+**Acceptance test:** Demonstrate a complete economic loop: earn money, spend it, observe a change in stock or demand, and see the resulting effects on player choices or campus activity.
+
+## 5. Create a deep social network with memory and consequences
+
+**Make relationships something the player develops, maintains and sometimes damages.**
+
+Replace simplistic friendship counters with a relationship system that can represent different dimensions of social connection.
+
+Possible dimensions include trust, familiarity, respect, affection, rivalry and resentment. Not every NPC needs every dimension; use the complexity appropriate to each character.
+
+NPCs should remember meaningful experiences, including:
+
+- Whether the player helped or disappointed them.
+- Shared activities and completed favours.
+- Broken promises, embarrassing incidents and conflicts.
+- Important gifts or meaningful conversations.
+- The player's behaviour toward their friends or rivals.
+
+Use those memories to influence future dialogue, invitations, requests, opportunities and reactions.
+
+Create natural social groups around departments, hostels, sports teams, student organisations, friendships and shared interests.
+
+Introduce rumours and reputation carefully. NPCs should not magically know everything the player does. Information should spread through plausible interactions and remain imperfect.
+
+Allow social relationships to unlock meaningful opportunities: an invitation to an event, access to a team, a project partner, a business connection or help during a difficult situation.
+
+Do not force romance into every relationship. Let players develop friendships, rivalries, professional connections and other appropriate bonds.
+
+**Acceptance test:** Help one NPC, offend another and become associated with a group. Later, verify that those experiences produce different, understandable reactions and consequences.
+
+## 6. Add a player-driven organisation and campus-politics system
+
+**Give the player the ability to influence the university's social structure, not merely walk through it.**
+
+Introduce a flexible organisation system featuring appropriate groups such as:
+
+- Departmental associations.
+- Football and basketball teams.
+- Engineering, robotics, coding and creative clubs.
+- Student businesses and entrepreneurial groups.
+- Cultural societies and campus media.
+- Student leadership organisations.
+
+Allow the player to join selected groups, build skills, complete group activities, gain trust, compete for positions and unlock specialised opportunities.
+
+Where supported by the project's scope, allow leadership decisions to affect group resources, recruitment, event planning, competitions and internal disagreements.
+
+Introduce a student-election or campus-representation system as a major playable pathway. Campaigning could involve reputation, speeches, promises, student support, debates, alliances and public events.
+
+Elections must have coherent rules and visible outcomes. Promises should be tracked and fulfilled, abandoned or broken with appropriate consequences.
+
+Different groups should have distinct goals, aesthetics, resources and social connections. Rivalry should emerge from actual competition and decisions rather than arbitrary hostility.
+
+**Acceptance test:** Join a group, progress within it, influence an event or decision, and verify that the outcome changes the world or unlocks a real opportunity.
+
+## 7. Turn the campus into an explorable, interactive world of systems
+
+**Make locations mechanically meaningful, not just visually impressive.**
+
+Audit the campus and classify its important locations according to what the player can actually do there.
+
+A library should support studying and research. A laboratory should support practical projects. A sports facility should support training and competition. A student village should support commerce and social activity. A student centre should support events, organisations and campus culture.
+
+Introduce context-sensitive interactions with objects, facilities and people. Where the current engine supports them, allow objects and locations to participate in several systems.
+
+Examples:
+
+- A noticeboard displays opportunities, deadlines, competitions and event announcements.
+- A laboratory provides access to practical challenges and equipment.
+- A workshop supports building or improving project prototypes.
+- A radio station broadcasts campus news, music and event announcements.
+- A food stall becomes busier when a nearby event attracts crowds.
+- A sports venue supports practice, organised competitions and social gatherings.
+- A campus landmark provides discoveries, photographs, collectibles or story clues.
+
+Prioritise a few highly interactive locations over dozens of empty buildings.
+
+Create a discovery system for hidden spaces, unusual campus stories, local landmarks, collectibles and secrets. Discoveries should reward exploration with meaningful content, not just arbitrary points.
+
+Ensure all interactions have proper prompts, input handling, feedback and clear outcomes.
+
+**Acceptance test:** Demonstrate several locations that support multiple genuine activities, with at least some activities affecting progression, relationships, money or events.
+
+## 8. Build a dynamic story system with multiple solutions
+
+**Move beyond a single linear sequence of missions.**
+
+Create a mission and opportunity framework that can generate structured scenarios from world conditions, character relationships and player progress.
+
+A scenario should have:
+
+- A clear objective and context.
+- Relevant characters, locations and prerequisites.
+- More than one reasonable approach when appropriate.
+- Meaningful consequences.
+- Persistent outcomes that other systems can recognise.
+
+For example, a student event is threatened by a missing supplier. The player might locate the supplier, negotiate with another vendor, raise funds or help reorganise the event. Each approach should use existing mechanics and lead to plausible differences.
+
+Create longer story arcs involving friendship, departmental rivalry, entrepreneurship, sports, academic pressure, student leadership and personal ambition.
+
+Use authored missions for important dramatic moments and system-generated opportunities for replayability. Do not attempt to procedurally generate every line of dialogue or every mission.
+
+Track important decisions so that future events can reference them. Include optional missions, competing commitments, missed opportunities and consequences that develop over time.
+
+The game should not require the player to follow a single intended lifestyle. Academic excellence, social influence, sports, business and creative achievement should offer different forms of progression.
+
+**Acceptance test:** Complete the same scenario in two different ways and verify that the outcomes, relationships, resources or subsequent opportunities differ.
+
+## 9. Introduce a fully connected time, calendar and campus-life simulation
+
+**Make time the system that binds the entire game together.**
+
+Upgrade the existing day/night, timetable and event systems into a coherent simulation clock and academic calendar.
+
+Include, where compatible with the project:
+
+- Morning, afternoon, evening and night routines.
+- Lecture schedules and class transitions.
+- Weekdays and weekends.
+- Assignment and examination periods.
+- Sports fixtures, club meetings and campus events.
+- Holidays, registration periods and semester transitions.
+- Dynamic weather and its effects on outdoor activities.
+- Different crowd patterns across locations and times.
+
+Time should matter without becoming tedious. Provide suitable time acceleration, clear schedule information and sensible ways to manage commitments.
+
+NPC schedules, vendor operations, event attendance and player opportunities should reference the same authoritative time system.
+
+If a player misses a lecture, event or deadline, handle it through explicit rules. Do not silently reset time, teleport NPCs or rewrite the schedule to disguise a failure.
+
+Make the passage of time visible through changes in campus activity, lighting, crowd density, ambience and event availability.
+
+Persist relevant calendar state in saved games. Ensure time-dependent systems remain consistent after loading.
+
+**Acceptance test:** Observe the same locations at several times, advance through a meaningful academic period and verify that schedules, events, NPC behaviour and player commitments remain consistent.
+
+## 10. Rebuild progression, personal identity and replayability around player choice
+
+**Give the player a long-term reason to care about their journey.**
+
+Expand the existing avatar, hostel, progression and save systems into a persistent student-life profile.
+
+Let the player develop a recognisable identity through choices such as:
+
+- Academic specialisation and practical skills.
+- Sports ability and team membership.
+- Social relationships and group affiliations.
+- Business ownership and financial progress.
+- Leadership and campus reputation.
+- Creative achievements, projects and discoveries.
+- Personal style, room customisation and appropriate possessions.
+
+Introduce a progression structure with milestones, unlockable opportunities, meaningful achievements and several possible end-of-year outcomes.
+
+Do not reduce everything to one generic level or a single reputation score. A respected athlete, successful entrepreneur, brilliant student and influential organiser should be able to progress in different ways.
+
+Add a persistent journal or student dossier recording significant experiences, achievements, projects, relationships and important choices.
+
+Make new playthroughs meaningfully different through varied starting circumstances, generated NPC relationships, different opportunities, competing goals and optional playstyles. Use deterministic seeds or other suitable mechanisms if useful for repeatability.
+
+Support saving and loading across the new systems. Avoid introducing paid mechanics, manipulative retention systems or artificial grinding.
+
+**Acceptance test:** Complete a meaningful section of gameplay, save, reload and verify that the player's identity, progress, relationships, inventory and world consequences persist. Demonstrate at least two distinct progression paths.
+
+# THE STRUCTURAL REFORM THAT MAKES ALL TEN SYSTEMS WORK
+
+Do not implement the ten transformations as ten independent features.
+
+Design a shared underlying architecture with clear ownership of game state.
+
+Inspect whether the project needs a central simulation manager, event/message system, persistent character profiles, relationship data model, world clock, mission state manager, economy service or save-state migration system. Reuse existing equivalents wherever possible.
+
+Establish clear interfaces between systems. For example:
+
+- The calendar publishes a major football-event announcement.
+- The event director reacts to that announcement.
+- NPC schedules and movement respond to the event.
+- Vendors adjust stocking and preparation.
+- The economy records purchases.
+- The relationship system tracks who attended together.
+- The reputation system records the player's contribution.
+- The mission system generates follow-up opportunities.
+- The save system persists all important outcomes.
+
+That is the standard of integration I want. A single action should be capable of influencing several connected systems without requiring a separate hard-coded script for every possible combination.
+
+Use event-driven architecture, finite-state machines, utility-based AI, data-driven configurations or other appropriate techniques according to the actual engine. Do not adopt complex patterns merely because they sound advanced.
+
+Define authoritative state, avoid duplicated sources of truth, prevent circular event loops and ensure systems fail gracefully when an NPC, location or activity becomes unavailable.
+
+# IMPLEMENTATION PLAN
+
+## Phase 1 — Technical audit and architecture
+
+Inspect the actual project and report:
+
+- The current engine, rendering approach and major modules.
+- Existing systems that can be extended.
+- Broken, duplicated or fragile systems that must be addressed.
+- Current save-state structure and risks to existing progress.
+- Performance limitations and likely architectural bottlenecks.
+- A practical implementation order for the ten transformations.
+
+Do not stop after writing a plan. Begin implementing the changes after the audit, unless a genuine blocker prevents progress.
+
+## Phase 2 — Build the shared simulation foundation
+
+Implement the smallest coherent foundation needed to support the new systems.
+
+Prioritise persistent state, the world clock, NPC profiles and schedules, event communication, relationship data and save/load integration.
+
+Test this foundation before layering complex features onto it.
+
+## Phase 3 — Implement interconnected gameplay
+
+Introduce the ten transformations in compatible groups. Start with a complete, playable slice of the experience before expanding its breadth.
+
+For example, implement a complete campus football-event scenario involving NPC schedules, event announcements, player participation, vendor demand, relationships, reputation and persistence.
+
+Use that scenario to validate the architecture. Then expand the same foundation into academics, organisations, business, exploration and longer story arcs.
+
+## Phase 4 — Integrate, optimise and polish
+
+Improve the presentation of the new systems with appropriate character animations, contextual dialogue, interface design, sound, environmental storytelling and visual feedback.
+
+Keep the existing Undergrad identity. Do not sacrifice stable gameplay to add expensive effects.
+
+Profile performance, reduce unnecessary NPC updates, use simplified simulation for distant characters and fix bottlenecks before increasing population or simulation complexity.
+
+## Phase 5 — Verify the finished implementation
+
+Run the game and test the systems together, not just in isolation.
+
+Verify that:
+
+- NPCs follow coherent schedules and retain meaningful memories.
+- Events create observable consequences.
+- Academic decisions affect progression.
+- Money and supplies behave consistently.
+- Relationships influence social outcomes.
+- Organisations and elections affect campus life.
+- Locations offer functional activities.
+- Missions support meaningful alternatives.
+- Time affects schedules and events coherently.
+- Player progression and world changes survive saving and loading.
+- Existing character customisation, intro sequence, Omo-Gist, Omo-Pay, hostel ownership, transportation, timetable, sports modes and other functioning features still work.
+- Navigation, collision and performance have not regressed.
+
+# QUALITY BAR
+
+I do not want a game that merely looks like a world-class production in a screenshot.
+
+I want a game whose depth becomes apparent after playing it for thirty minutes: the player meets recognisable people, makes choices, experiences consequences, discovers new opportunities and sees a campus that responds to their actions.
+
+The Nigerian setting must be authentic and specific. Incorporate believable campus culture, student associations, transport, food businesses, slang, social dynamics, music and university pressures without reducing Nigerian life to stereotypes or repetitive jokes.
+
+Keep the existing game playable throughout development. Make major changes through controlled, testable implementation rather than a reckless rewrite.
+
+If a requested feature is too large for the current engine or architecture, implement the strongest complete and playable version that fits, and explain what remains. Do not substitute a nonfunctional mock-up.
+
+## REQUIRED FINAL REPORT
+
+When implementation is finished, provide:
+
+1. The ten transformations attempted and their actual implementation status.
+2. The most important architectural changes and files modified.
+3. Which new systems communicate with one another.
+4. The acceptance tests performed and their results.
+5. Any known bugs, limitations or incomplete features.
+6. Performance or compatibility concerns.
+7. The exact steps needed to launch and test the upgraded game.
+
+**Final instruction:** Treat this as a major evolution of Undergrad's underlying game design, not a routine update. Prioritise systemic depth, emergent stories, meaningful decisions, technical integrity and replayability. Build something distinctive enough that the university setting itself becomes the source of unforgettable gameplay.
